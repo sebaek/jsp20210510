@@ -17,6 +17,7 @@ request.setCharacterEncoding("utf-8");
 name 파라미터 = <%= request.getParameter("name") %> <br>
 address 파라미터 = <%= request.getParameter("address") %>
 
+
 <p>
 <b>request.getParameterValues() 메서드 사용</b> <br>
 <%
