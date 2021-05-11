@@ -48,8 +48,8 @@ address 파라미터 = <%= request.getParameter("address") %>
 <p>
 <b>request.getParameterMap() 메서드 사용</b> <br>
 <%
-	Map parameterMap = request.getParameterMap();
-	String[] nameParam = (String[]) parameterMap.get("name");
+	Map<String, String[]> parameterMap = request.getParameterMap();
+	String[] nameParam = parameterMap.get("name");
 	if (nameParam != null) {
 %>
 		name = <%= nameParam[0] %>	
