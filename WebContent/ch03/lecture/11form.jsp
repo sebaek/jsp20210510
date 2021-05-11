@@ -19,7 +19,7 @@
 <hr>
 
 <p><%= request.getParameter("q") %> </p>
-
+<p><%= request.getParameter("age") %> </p>
 </body>
 </html>
 
