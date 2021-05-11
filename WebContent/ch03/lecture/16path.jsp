@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<h3>상대 경로</h3>
 
 <h5>같은 경로</h5>
 <a href="15form-method.jsp">15파일</a>
