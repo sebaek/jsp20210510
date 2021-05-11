@@ -4,7 +4,7 @@
 <html>
 <head>
 
-<%@ include file="02subModule.jsp" %>
+<%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
 <title>Insert title here</title>
 </head>
