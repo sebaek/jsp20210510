@@ -40,6 +40,34 @@
 		</div>
 	</div>
 
+	<hr>
+	
+	<div class="container" >
+		<div class="row justify-content-center">
+			<div class="col-6">
+				<p> name : <%= request.getParameter("name") %> </p>
+				<%-- <p> fruit1 : <%= request.getParameterValues("fruit")[0] %> </p> --%>
+				
+				<%
+				String[] fruits = request.getParameterValues("fruit");
+				
+				if (fruits != null && fruits.length > 0) {
+					for (int i = 0; i < fruits.length; i++) {
+						out.print("<p>");
+						out.print("fruit" + (i+1) + " : " + fruits[i]);
+						out.print("</p>");
+					}
+				}
+				
+				
+				%>
+				
+			</div>
+		
+		</div>
+	
+	</div>
+
 </body>
 </html>
 
