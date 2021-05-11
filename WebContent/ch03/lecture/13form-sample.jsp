@@ -22,7 +22,23 @@
 	
 	<hr>
 	<div class="container">
-		합계 : <!-- 이 위치에 출력되도록 -->
+		합계 :
+		<!-- 이 위치에 출력되도록 -->
+		<%
+		String[] fruits = request.getParameterValues("fruit");
+		
+		int sum = 0;
+		if (fruits != null && fruits.length > 0) {
+			for (String value : fruits) {
+				sum += Integer.valueOf(value);
+			}
+		}
+		// out.print(sum);
+		%>
+		
+		<%= sum %>
+		
+		
 	</div>
 	
 </body>
