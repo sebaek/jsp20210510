@@ -18,7 +18,8 @@
 <h5>하위 경로</h5>
 <a href="sub/18path.jsp">18파일</a>
 
-
+<h5>viewHeader.jsp</h5>
+<a href="../textbook/viewHeader.jsp">viewHeader.jsp</a>
 
 </body>
 </html>
