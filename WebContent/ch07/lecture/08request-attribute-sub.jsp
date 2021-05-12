@@ -4,7 +4,7 @@
 
 <%
 
-User member = request.getAttribute("member"); // 코드 수정
+User member = (User) request.getAttribute("member"); // 코드 수정
 
 %>
 

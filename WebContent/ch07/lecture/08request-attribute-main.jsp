@@ -17,7 +17,7 @@
 	<%
 	User user = new User("donald", 22, "us");
 	// 코드 추가
-	
+	request.setAttribute("member", user);
 	
 	%>
 	
