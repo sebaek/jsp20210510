@@ -24,7 +24,7 @@
 	
 	include 후 name 파라미터 값: <%= request.getParameter("name") %>
 	<br>
-	include 후 name 파라미터 길이: <%= request.getParameterValues("name").length %>
+	<%-- include 후 name 파라미터 길이: <%= request.getParameterValues("name").length %> --%>
 </div>
 </body>
 </html>
