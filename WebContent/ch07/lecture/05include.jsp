@@ -30,6 +30,13 @@
 	</jsp:include>
 </div>
 
+<div class="container mt-3">
+	<h1>구구단 4단 출력</h1>
+	
+	<jsp:include page="05include-tag.jsp">
+		<jsp:param value="4" name="dan"/>
+	</jsp:include>
+</div>
 
 </body>
 </html>
