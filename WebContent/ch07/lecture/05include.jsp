@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-	<h1>구구단 3단 출력</h1>
+	<h1>구구단 3단 출력 (include directive)</h1>
 	<%
 	int dan = 3;
 	%>
@@ -21,6 +21,16 @@
 	<%@ include file="05include-directive.jsp" %>
 	
 </div>
+
+<div class="container mt-3" >
+	<h1>구구단 3단 출력 (include tag)</h1>
+	
+	<jsp:include page="05include-tag.jsp">
+		<jsp:param name="dan" value="3" />
+	</jsp:include>
+</div>
+
+
 </body>
 </html>
 
