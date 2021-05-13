@@ -20,7 +20,7 @@ if (id != null && id.equals("madvirus")) {
 </head>
 <body>
 <div class="container">
-	잘못된 아이디입니다.
+	<h1>잘못된 아이디입니다.</h1>
 </div>
 </body>
 </html>
