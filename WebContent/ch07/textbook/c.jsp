@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-	이 페이지는 to.jsp가 생성한 것입니다.
+	이 페이지는 <b style="font-size:30px">C</b> 입니다.		
 </div>
 </body>
 </html>
