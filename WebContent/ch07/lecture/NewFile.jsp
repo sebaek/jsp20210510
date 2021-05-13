@@ -2,9 +2,7 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-<%--
 
- --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +13,7 @@
 </head>
 <body>
 <div class="container">
-	이 페이지는 from.jsp가 생성한 것입니다.
 	
-	<jsp:forward page="to.jsp"></jsp:forward>
 </div>
 </body>
 </html>
