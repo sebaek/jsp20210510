@@ -6,12 +6,19 @@ String code = request.getParameter("code");
 String viewPageURI = null;
 
 if (code.equals("A")) {
-	viewPageURI = "a.jsp";
+	viewPageURI = "/ch07/textbook/a.jsp";
 } else if (code.equals("B")) {
-	viewPageURI = "b.jsp";
+	viewPageURI = "/ch07/textbook/b.jsp";
 } else if (code.equals("C")) {
-	viewPageURI = "c.jsp";	
+	viewPageURI = "/ch07/textbook/c.jsp";	
 }
 %>
-
+<h1>view.jsp</h1>
 <jsp:forward page="<%= viewPageURI %>" />
+
+
+
+
+
+
+

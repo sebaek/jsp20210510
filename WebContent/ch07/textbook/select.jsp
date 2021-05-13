@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-	<form action="view.jsp">
+	<form action="<%= request.getContextPath() %>/ch07/textbook/view.jsp">
 		<div class="form-group">
 			<label for="select1">
 				보고 싶은 페이지 선택
