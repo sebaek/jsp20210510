@@ -15,7 +15,7 @@
 <div class="container mt-5">
 	<div class="row justify-content-center">
 		<div class="col-4">
-			<form action="sessionLogin.jsp" method="post">
+			<form action="<%=request.getContextPath() %>/ch10/textbook/sessionLogin.jsp" method="post">
 				<div class="form-group">
 					<label for="input1">
 						아이디 
