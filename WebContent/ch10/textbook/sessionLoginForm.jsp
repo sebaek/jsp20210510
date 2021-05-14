@@ -12,12 +12,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="container">
-	<form action="sessionLogin.jsp" method="post">
-		아이디 <input type="text" name="id" size="10">
-		암호 <input type="password" name="password" size="10">
-		<input type="submit" value="로그인">
-	</form>
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col-4">
+			<form action="sessionLogin.jsp" method="post">
+				<div class="form-group">
+					<label for="input1">
+						아이디 
+					</label>
+					<input type="text" name="id" id="input1" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="input2">
+						암호 
+					</label>
+					<input type="password" name="password" class="form-control" id="input2">
+				</div>
+				<input type="submit" value="로그인" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
 </div>
 </body>
 </html>
+
+
+
+
+
