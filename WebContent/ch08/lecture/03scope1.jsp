@@ -9,6 +9,9 @@
 <jsp:useBean id="book2" scope="request" class="ch08.Book"></jsp:useBean>
 <jsp:setProperty name="book2" property="title" value="웹" />
 
+<jsp:useBean id="book3" scope="session" class="ch08.Book"></jsp:useBean>
+<jsp:setProperty name="book3" property="title" value="JSP" />
+
 <!DOCTYPE html>
 <html>
 <head>

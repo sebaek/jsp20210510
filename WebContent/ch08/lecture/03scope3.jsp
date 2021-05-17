@@ -2,7 +2,9 @@
 <%@ page import="java.util.*" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
-
+<jsp:useBean id="book1" scope="page" class="ch08.Book"></jsp:useBean>
+<jsp:useBean id="book2" scope="request" class="ch08.Book"></jsp:useBean>
+<jsp:useBean id="book3" scope="session" class="ch08.Book"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,16 @@
 </head>
 <body>
 <div class="container">
-	
+	<h3>scope3.jsp</h3>
+	책1 제목 : <jsp:getProperty property="title" name="book1"/> <br>
+	책2 제목 : <jsp:getProperty property="title" name="book2"/> <br>
+	책3 제목 : <jsp:getProperty property="title" name="book3"/> <br>
 </div>
 </body>
 </html>
+
+
+
+
+
+
