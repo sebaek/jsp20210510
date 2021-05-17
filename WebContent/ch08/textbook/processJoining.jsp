@@ -4,8 +4,10 @@
 <% request.setCharacterEncoding("utf-8"); %>
 
 <jsp:useBean id="memberInfo" class="ch08.MemberInfo" />
-<jsp:setProperty name="memberInfo" property="*" />
-<jsp:setProperty name="memberInfo" property="password" value="<%= memberInfo.getId() %>" />
+<jsp:setProperty name="memberInfo" property="*"/>
+<%-- <jsp:setProperty name="memberInfo" property="password" value="<%= memberInfo.getId() %>" /> --%>
+<jsp:setProperty name="memberInfo" property="password" param="id" />
+
 
 <!DOCTYPE html>
 <html>
