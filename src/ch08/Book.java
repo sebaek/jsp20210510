@@ -6,6 +6,15 @@ public class Book {
 	private String writer;
 	private String publisher;
 	private int price;
+	private boolean out;
+	
+	public boolean isOut() {
+		return out;
+	}
+	
+	public void setOut(boolean out) {
+		this.out = out;
+	}
 	
 	public String getBarCode() {
 		return code;
