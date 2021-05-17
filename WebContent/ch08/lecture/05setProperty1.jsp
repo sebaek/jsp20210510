@@ -16,6 +16,7 @@
 	<form action="05setProperty2.jsp" method="post">
 		제목 : <input type="text" name="title" /> <br>
 		저자 : <input type="text" name="name" /> <br>
+		가격 : <input type="text" name="price" /> <br>
 		<input type="submit" value="등록" />
 	</form>
 </div>
