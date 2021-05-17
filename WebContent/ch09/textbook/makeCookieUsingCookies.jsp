@@ -6,7 +6,7 @@
 
 <%
 	response.addCookie(Cookies.createCookie("name", "최범균"));
-	response.addCookie(Cookies.createCookie("id", "madvirus", "/chap09", -1));
+	response.addCookie(Cookies.createCookie("id", "madvirus", request.getContextPath(), -1));
 %>
 
 <!DOCTYPE html>
