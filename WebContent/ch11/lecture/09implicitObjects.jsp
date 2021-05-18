@@ -20,8 +20,8 @@
 		<li>requestScope (맵)</li>
 		<li>sessionScope (맵)</li>
 		<li>applicationScope (맵)</li>
-		<li>param (맵)</li>
-		<li>paramValues (맵)</li>
+		<li>param (맵) (String, String)</li>
+		<li>paramValues (맵) (String, String[])</li>
 		<li>header (맵)</li>
 		<li>headerValues (맵)</li>
 		<li>cookie (맵)</li>
