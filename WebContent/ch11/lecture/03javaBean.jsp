@@ -7,6 +7,10 @@
 	<jsp:setProperty name="book1" property="writer" value="kim" />
 </jsp:useBean>
 
+<%
+pageContext.setAttribute("title", "writer");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +25,14 @@
 	title : ${book1.title } <br>
 	writer : ${book1.writer } <br>
 	<%-- none : ${book1.none } <br> --%>
+	
+	<hr>
+	title : ${book1["title"] } <br>
+	writer : ${book1["writer"] } <br>
+	
+	<hr>
+	title : ${book1[title] } <br>
+	
 	
 </div>
 </body>
