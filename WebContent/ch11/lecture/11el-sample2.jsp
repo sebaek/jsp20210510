@@ -13,9 +13,9 @@
 </head>
 <body>
 <div class="container">
-	이름 : ${ } <br>
-	나이 : ${ } <br>
-	이메일 : ${ } <br>
+	이름 : ${param.myname } <br>
+	나이 : ${param.age } <br>
+	이메일 : ${param["memberEmail"] } <br>
 </div>
 </body>
 </html>
