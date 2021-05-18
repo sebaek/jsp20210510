@@ -14,15 +14,15 @@
 <body>
 <div class="container">
 	<form>
-		수1: <input type="text" /> <br>
-		수2: <input type="text" /> <br>
+		수1: <input type="text" name="num1" /> <br>
+		수2: <input type="text" name="num2" /> <br>
 		<input type="submit" value="계산" >
 	</form>
 	<hr>
-	더한 결과 : <br>
-	뺀 결과 : <br>
-	곱한 결과 : <br>
-	나눈 결과 : <br>	
+	더한 결과 : ${param.num1 + param.num2 }<br>
+	뺀 결과 : ${param.num1 - param.num2 }<br>
+	곱한 결과 : ${param.num1 * param.num2 }<br>
+	나눈 결과 : ${param.num1 / param.num2 }<br>
 </div>
 </body>
 </html>
