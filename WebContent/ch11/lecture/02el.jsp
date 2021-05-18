@@ -3,6 +3,10 @@
 
 <% request.setCharacterEncoding("utf-8"); %>
 
+<%
+pageContext.setAttribute("pageAttr1", "pageVal1");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +17,16 @@
 </head>
 <body>
 <div class="container">
-	
+	<%
+	out.print(pageContext.getAttribute("pageAttr1"));
+	%>
+	<br>
+	${pageAttr1 }
 </div>
 </body>
 </html>
+
+
+
+
+
