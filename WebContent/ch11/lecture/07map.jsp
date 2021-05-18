@@ -8,6 +8,8 @@ map.put("java", "spring");
 map.put("css", "bootstrap");
 map.put("js", "jquery");
 map.put("python", "django");
+map.put("h-t-m-l", "html");
+map.put("hello world!", "hi");
 
 pageContext.setAttribute("map", map);
 pageContext.setAttribute("python", "js");
@@ -26,6 +28,12 @@ pageContext.setAttribute("python", "js");
 	css : ${map.css } <br>
 	js : ${map["js"] } <br>
 	python : ${map[python] } <br>
+	
+	<hr>
+	h-t-m-l : ${map.h-t-m-l } <br>
+	h-t-m-l : ${map["h-t-m-l"] } <br>
+	<%-- hello world! : ${map.hello world! } <br> --%>
+	hello world! : ${map["hello world!"] } <br>
 </div>
 </body>
 </html>
