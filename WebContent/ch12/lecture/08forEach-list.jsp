@@ -26,7 +26,7 @@ request.setAttribute("attr1", list);
 <div class="container">
 	<h1>forEach list</h1>
 	<ul>
-		<c:forEach items="" var="">
+		<c:forEach items="${attr1 }" var="elem">
 			<li>${elem }</li>
 		</c:forEach>
 	</ul>
