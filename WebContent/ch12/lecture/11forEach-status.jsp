@@ -15,22 +15,13 @@
 </head>
 <body>
 <div class="container">
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-	<c:forEach var="p" begin="3" end="10" varStatus="status">
-		<c:if test="${status.first && p ne 1 }">
-		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-		</c:if>
-		<li class="page-item"><a class="page-link" href="#">${p }</a></li>
+	<h1>forEach varStatus</h1>
+	<c:forEach begin="1" end="5" var="i" varStatus="status">
+		${i } : ${status.count } : ${status.first }<br>
 	</c:forEach>
-    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
-</nav>
 </div>
 </body>
 </html>
-
-
 
 
 
