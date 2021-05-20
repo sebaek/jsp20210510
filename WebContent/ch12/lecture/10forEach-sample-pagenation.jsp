@@ -18,7 +18,7 @@
 <nav aria-label="Page navigation example">
   <ul class="pagination">
 	<c:forEach var="p" begin="3" end="10" varStatus="status">
-		<c:if test="${status.first && p ne 1 }">
+		<c:if test="${status.first and p ne 1 }">
 		    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
 		</c:if>
 		<li class="page-item"><a class="page-link" href="#">${p }</a></li>
