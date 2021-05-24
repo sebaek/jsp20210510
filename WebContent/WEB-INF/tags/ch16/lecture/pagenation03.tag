@@ -1,5 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ attribute name="start" required="true" type="java.lang.Integer" %>
+<%@ attribute name="end" required="true" type="java.lang.Integer" %>
 
 <nav aria-label="Page navigation example">
   <ul class="pagination">
