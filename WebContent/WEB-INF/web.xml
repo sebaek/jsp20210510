@@ -13,7 +13,33 @@
   <session-config>
   	<session-timeout>30</session-timeout>
   </session-config>
+  
+  <servlet>
+  	<servlet-name>
+  		servlet3
+  	</servlet-name>
+  	<servlet-class>
+  		ch17.lecture.Servlet03
+  	</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>
+  		servlet3
+  	</servlet-name>
+  	<url-pattern>
+  		/servlet3
+  	</url-pattern>
+  </servlet-mapping>
 </web-app>
+
+
+
+
+
+
+
+
 
 
 
