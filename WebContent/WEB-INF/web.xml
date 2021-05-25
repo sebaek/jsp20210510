@@ -31,6 +31,16 @@
   		/servlet3
   	</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>now</servlet-name>
+  	<servlet-class>ch17.textbook.NowServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>now</servlet-name>
+  	<url-pattern>/now</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
