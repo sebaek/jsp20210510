@@ -18,8 +18,17 @@ public class DBCPInit2 extends HttpServlet {
     public void init() throws ServletException {
 //    	loadJDBCDriver();
 //    	initConnectionPool();
+    	String driver = getInitParameter("jdbcdriver");
+    	String url = getInitParameter("jdbcUrl");
+    	String user = getInitParameter("dbUser");
+    	String pw = getInitParameter("dbPass");
+    	String pool = getInitParameter("poolName");
     	
-    	
+    	System.out.println(driver);
+    	System.out.println(url);
+    	System.out.println(user);
+    	System.out.println(pw);
+    	System.out.println(pool);
     }
 
 }
