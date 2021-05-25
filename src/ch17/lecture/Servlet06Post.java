@@ -34,6 +34,8 @@ public class Servlet06Post extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
 		System.out.println("servlet06 doPost method......");
 		
 		String name = request.getParameter("name");
