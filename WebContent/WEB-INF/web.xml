@@ -41,6 +41,32 @@
   	<servlet-name>now</servlet-name>
   	<url-pattern>/now</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>servlet12</servlet-name>
+  	<servlet-class>ch17.lecture.Servlet12InitParam</servlet-class>
+  	<init-param>
+  		<param-name>
+  			url
+  		</param-name>
+  		<param-value>
+  			jdbc.mysql
+  		</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>
+  			password
+  		</param-name>
+  		<param-value>
+  			wnddkdwjdqh
+  		</param-value>
+  	</init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>servlet12</servlet-name>
+  	<url-pattern>/servlet12</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
