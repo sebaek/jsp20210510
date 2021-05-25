@@ -101,6 +101,23 @@
   	</url-pattern>
   </servlet-mapping>  
   
+  <servlet>
+  	<servlet-name>
+  		servlet15
+  	</servlet-name>
+  	<servlet-class>
+  		ch17.lecture.Servlet15Startup
+  	</servlet-class>
+  	<load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>
+  		servlet15
+  	</servlet-name>
+  	<url-pattern>
+  		/servlet15
+  	</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 
