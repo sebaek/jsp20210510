@@ -67,7 +67,48 @@
   	<servlet-name>servlet12</servlet-name>
   	<url-pattern>/servlet12</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>
+  		servlet13
+  	</servlet-name>
+	<servlet-class>
+		ch17.lecture.Servlet13InitParam
+	</servlet-class>  
+	<init-param>
+		<param-name>
+			name
+		</param-name>
+		<param-value>
+			trump
+		</param-value>
+	</init-param>
+	<init-param>
+		<param-name>
+			home
+		</param-name>
+		<param-value>
+			korea
+		</param-value>
+	</init-param>	
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>
+  		servlet13
+  	</servlet-name>
+  	<url-pattern>
+  		/servlet13
+  	</url-pattern>
+  </servlet-mapping>  
+  
 </web-app>
+
+
+
+
+
+
+
 
 
 
