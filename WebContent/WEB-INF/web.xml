@@ -10,6 +10,20 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
+  <listener>
+  	<listener-class>ch20.AppListener01</listener-class>
+  </listener>
+  
+  <context-param>
+  	<param-name>jdbcdriver</param-name>
+  	<param-value>com.mysql.jdbc.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>jdbcUrl</param-name>
+  	<param-value>jdbc:mysql://localhost:3306/guestbook</param-value>
+  </context-param>
+  
   <session-config>
   	<session-timeout>30</session-timeout>
   </session-config>
