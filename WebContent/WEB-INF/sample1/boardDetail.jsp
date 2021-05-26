@@ -17,31 +17,19 @@
 </head>
 <body>
 <div class="container">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>제목</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${list }" var="board" varStatus="status">
-				<tr>
-					<td>${status.count }</td>
-					<td>
-						<a href="detail?index=${status.index }">
-							${board.title }
-						</a>
-					
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-		
-	</table>
+	제목
+	<br>
+	<input value="${board.title }" readonly />
+	<br>
+	본문
+	<br>
+	<textarea readonly><c:out value="${board.body }" /></textarea>
+	
 </div>
 </body>
 </html>
+
+
 
 
 
