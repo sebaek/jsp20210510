@@ -52,10 +52,12 @@ public class BoardWriterServlet extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
+		String writer = request.getParameter("writer");
 		
 		Board board = new Board();
 		board.setTitle(title);
 		board.setBody(body);
+		board.setWriter(writer);
 		
 		list.add(board);
 		

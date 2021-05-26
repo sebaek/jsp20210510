@@ -29,6 +29,11 @@
 					<input type="text" name="title" class="form-control" id="input1">
 				</div>
 				<div class="form-group">
+					<label for="input2">작성자</label>				
+					<input id="input2" class="form-control" type="text" name="writer" >	
+				</div>
+				
+				<div class="form-group">
 					<label for="textarea1">본문</label>
 					<textarea class="form-control" name="body" rows="5" id="textarea1"></textarea>
 				</div>

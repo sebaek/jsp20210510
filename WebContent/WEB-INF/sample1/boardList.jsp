@@ -28,6 +28,7 @@
 					<tr>
 						<th>#</th>
 						<th>제목</th>
+						<th>작성자</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -38,8 +39,8 @@
 								<a href="detail?index=${status.index }">
 									${board.title }
 								</a>
-							
 							</td>
+							<td>${board.writer }</td>
 						</tr>
 					</c:forEach>
 				</tbody>

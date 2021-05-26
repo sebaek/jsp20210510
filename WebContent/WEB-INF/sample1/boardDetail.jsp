@@ -37,6 +37,12 @@
 					<label for="input1">제목</label>
 					<input readonly value="${board.title }" type="text" name="title" class="form-control" id="input1">
 				</div>
+				
+				<div class="form-group" >
+					<label for="input2">작성자</label>
+					<input readonly value="${board.writer }" type="text" name="writer" class="form-control" id="input2">
+				</div>
+				
 				<div class="form-group">
 					<label for="textarea1">본문</label>
 					<textarea readonly class="form-control" name="body" rows="5" id="textarea1"><c:out value="${board.body }" /></textarea>

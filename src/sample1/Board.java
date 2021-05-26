@@ -3,7 +3,14 @@ package sample1;
 public class Board {
 	private String title;
 	private String body;
+	private String writer;
 	
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 	public String getTitle() {
 		return title;
 	}
