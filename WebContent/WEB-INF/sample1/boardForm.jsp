@@ -20,17 +20,21 @@
 <s1:navbar></s1:navbar>
 
 <div class="container">
-	<form action="" method="post">
-		제목 
-		<br>
-		<input type="text" name="title" />
-		<br>
-		본문
-		<br>
-		<textarea name="body" ></textarea>
-		<br>
-		<input type="submit" />
-	</form>
+	<div class="row justify-content-center">
+		<div class="col-8">
+			<form action="" method="post">
+				<div class="form-group" >
+					<label for="input1">제목</label>
+					<input type="text" name="title" class="form-control" id="input1">
+				</div>
+				<div class="form-group">
+					<label for="textarea1">본문</label>
+					<textarea class="form-control" name="body" rows="5" id="textarea1"></textarea>
+				</div>
+				<input type="submit" class="btn btn-primary"/>
+			</form>
+		</div>
+	</div>
 </div>
 </body>
 </html>

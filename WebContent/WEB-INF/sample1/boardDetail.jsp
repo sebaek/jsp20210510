@@ -21,14 +21,21 @@
 <s1:navbar />
 
 <div class="container">
-	제목
-	<br>
-	<input value="${board.title }" readonly />
-	<br>
-	본문
-	<br>
-	<textarea readonly><c:out value="${board.body }" /></textarea>
-	
+	<div class="row justify-content-center">
+		<div class="col-8">
+			<form action="" method="post">
+				<div class="form-group" >
+					<label for="input1">제목</label>
+					<input value="${board.title }" type="text" name="title" class="form-control" id="input1">
+				</div>
+				<div class="form-group">
+					<label for="textarea1">본문</label>
+					<textarea class="form-control" name="body" rows="5" id="textarea1"><c:out value="${board.body }" /></textarea>
+				</div>
+				<input type="submit" class="btn btn-primary"/>
+			</form>
+		</div>
+	</div>
 </div>
 </body>
 </html>
