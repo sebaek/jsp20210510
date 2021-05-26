@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="my" tagdir="/WEB-INF/tags/ch16/lecture" %>
 <%@ taglib prefix="tf" tagdir="/WEB-INF/tags/ch16/textbook" %>
+<%@ taglib prefix="s1" tagdir="/WEB-INF/tags/sample1" %>
 
 <% request.setCharacterEncoding("utf-8"); %>
 
@@ -16,6 +17,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<s1:navbar></s1:navbar>
+
 <div class="container">
 	<table class="table">
 		<thead>
