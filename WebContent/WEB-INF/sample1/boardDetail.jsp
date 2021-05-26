@@ -15,6 +15,14 @@
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
 <title>Insert title here</title>
+<script>
+	$(document).ready(function() {
+		$("#button1").click(function() {
+			$("#form1").find("input, textarea").removeAttr("readonly");
+			$("#submit1").removeAttr("hidden");
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -24,7 +32,7 @@
 	<div class="row justify-content-center">
 		<div class="col-8">
 			<h1>글 보기</h1>
-			<form action="" method="post">
+			<form id="form1" action="${pageContext.request.contextPath }/sample1/modify" method="post">
 				<div class="form-group" >
 					<label for="input1">제목</label>
 					<input readonly value="${board.title }" type="text" name="title" class="form-control" id="input1">
@@ -33,6 +41,9 @@
 					<label for="textarea1">본문</label>
 					<textarea readonly class="form-control" name="body" rows="5" id="textarea1"><c:out value="${board.body }" /></textarea>
 				</div>
+				<input type="text" value="${param.index }" hidden name="index" >
+				<button type="button" id="button1" class="btn btn-secondary">수정</button>
+				<input hidden type="submit" id="submit1" class="btn btn-primary" value="전송" />
 			</form>
 		</div>
 	</div>
