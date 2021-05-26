@@ -19,9 +19,10 @@
 <body>
 <s1:navbar></s1:navbar>
 
-<div class="container">
+<div class="container mt-5">
 	<div class="row justify-content-center">
 		<div class="col-8">
+			<h1>글 쓰기</h1>
 			<form action="" method="post">
 				<div class="form-group" >
 					<label for="input1">제목</label>

@@ -19,29 +19,34 @@
 <body>
 <s1:navbar></s1:navbar>
 
-<div class="container">
-	<table class="table">
-		<thead>
-			<tr>
-				<th>#</th>
-				<th>제목</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${list }" var="board" varStatus="status">
-				<tr>
-					<td>${status.count }</td>
-					<td>
-						<a href="detail?index=${status.index }">
-							${board.title }
-						</a>
-					
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-		
-	</table>
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col-8">
+			<h1>목록 보기</h1>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>제목</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${list }" var="board" varStatus="status">
+						<tr>
+							<td>${status.count }</td>
+							<td>
+								<a href="detail?index=${status.index }">
+									${board.title }
+								</a>
+							
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+				
+			</table>
+		</div>
+	</div>
 </div>
 </body>
 </html>
