@@ -14,6 +14,10 @@
   	<listener-class>ch20.AppListener01</listener-class>
   </listener>
   
+  <listener>
+  	<listener-class>sample1.BoardAppListener</listener-class>
+  </listener>
+  
   <context-param>
   	<param-name>jdbcdriver</param-name>
   	<param-value>com.mysql.jdbc.Driver</param-value>

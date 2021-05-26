@@ -17,21 +17,26 @@
 </head>
 <body>
 <div class="container">
-	<form action="" method="post">
-		제목 
-		<br>
-		<input type="text" name="title" />
-		<br>
-		본문
-		<br>
-		<textarea name="body" ></textarea>
-		<br>
-		<input type="submit" />
-	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${list }" var="board" varStatus="status">
+				<tr>
+					<td>${status.count }</td>
+					<td>${board.title }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+		
+	</table>
 </div>
 </body>
 </html>
-
 
 
 
