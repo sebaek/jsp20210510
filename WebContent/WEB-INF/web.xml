@@ -174,6 +174,25 @@
 	<filter-name>filter02</filter-name>
 	<url-pattern>/filter02</url-pattern>  
   </filter-mapping>
+  
+  <filter>
+  	<filter-name>filter0301</filter-name>
+  	<filter-class>ch19.lecture.Filter0301</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>filter0302</filter-name>
+  	<filter-class>ch19.lecture.Filter0302</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>filter0301</filter-name>
+  	<url-pattern>/filter03</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>filter0302</filter-name>
+  	<url-pattern>/filter03</url-pattern>
+  </filter-mapping>
+  
+  
 </web-app>
 
 
