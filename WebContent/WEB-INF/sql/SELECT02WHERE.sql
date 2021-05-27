@@ -52,5 +52,27 @@ SELECT * FROM Customers
 WHERE City IN ('Paris','London', 'Berlin');
 
 
+SELECT * FROM Customers
+WHERE City = 'Berlin';
+
+SELECT * FROM Customers
+WHERE City <> 'Berlin';
+
+SELECT * FROM Customers
+WHERE City != 'Berlin';
+
+SELECT * FROM Customers
+WHERE NOT City = 'Berlin';
+
+SELECT * FROM Customers
+WHERE NOT City LIKE '%on';
+
+SELECT * FROM Customers
+WHERE CustomerID = 32;
+
+
+
+
+
 
 
