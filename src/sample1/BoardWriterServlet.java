@@ -50,10 +50,12 @@ public class BoardWriterServlet extends HttpServlet {
 		ServletContext application = request.getServletContext();
 		List<Board> list = (List<Board>) application.getAttribute("boards");
 		
+		// 1. 요청 정보 분석
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
 		String writer = request.getParameter("writer");
 		
+		// 2. 비지니스 로직 실행
 		Board board = new Board();
 		board.setTitle(title);
 		board.setBody(body);
@@ -61,6 +63,7 @@ public class BoardWriterServlet extends HttpServlet {
 		
 		list.add(board);
 		
+		// 3. forward or redirect
 		response.sendRedirect(request.getContextPath()+"/sample1/list");
 	}
 
