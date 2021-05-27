@@ -165,7 +165,15 @@
   	<load-on-startup>1</load-on-startup>
   </servlet>
 
-  
+
+  <filter>
+  	<filter-name>filter02</filter-name>
+  	<filter-class>ch19.lecture.Filter02</filter-class>
+  </filter>  
+  <filter-mapping>
+	<filter-name>filter02</filter-name>
+	<url-pattern>/filter02</url-pattern>  
+  </filter-mapping>
 </web-app>
 
 
