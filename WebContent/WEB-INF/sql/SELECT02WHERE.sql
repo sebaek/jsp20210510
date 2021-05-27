@@ -70,9 +70,35 @@ WHERE NOT City LIKE '%on';
 SELECT * FROM Customers
 WHERE CustomerID = 32;
 
+-- AND
+SELECT * FROM Customers
+WHERE Country = 'Germany' AND City = 'Berlin';
+
+-- OR
+SELECT * FROM Customers
+WHERE City = 'Berlin' OR City = 'München';
+
+SELECT * FROM Customers
+WHERE Country = 'Germany' OR 
+(CustomerName LIKE '%s%' AND City LIKE '%ch%');
+
+SELECT * FROM Customers
+WHERE Country='Germany' AND (City='Berlin' OR City='München');
+
+SELECT * FROM Customers
+WHERE NOT Country='Germany' AND NOT Country='USA';
 
 
+SELECT
+ * FROM Customers
+WHERE
+ City = 'Berlin'
+AND 
+PostalCode
+ = 12209;
 
 
-
-
+SELECT
+ * FROM Customers
+WHERE
+ City = 'Berlin' OR City = 'London';
