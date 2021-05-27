@@ -957,7 +957,9 @@ INSERT INTO Suppliers (SupplierID,SupplierName,ContactName,Address,City,PostalCo
 INSERT INTO Suppliers (SupplierID,SupplierName,ContactName,Address,City,PostalCode,Country,Phone) VALUES (29,"Forêts d\'érables","Chantal Goulet","148 rue Chasseur","Ste-Hyacinthe","J2S 7S8","Canada","(514) 555-2955");
 
 COMMIT;
-/*
+
+/* 
+--drop
 ROLLBACK;
 DROP TABLE Categories;
 DROP TABLE Customers;
