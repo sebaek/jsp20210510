@@ -54,6 +54,9 @@ public class JDBC01Servlet extends HttpServlet {
 		ResultSet rs = null;
 		
 		try {
+			// 클래스 로딩
+			Class.forName("com.mysql.jdbc.Driver");
+			
 			// 연결
 			con = DriverManager.getConnection(url, user, password);
 
