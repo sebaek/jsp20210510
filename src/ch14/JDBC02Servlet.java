@@ -39,7 +39,7 @@ public class JDBC02Servlet extends HttpServlet {
 	
 	private void executeJDBC() {
 
-		String sql = "SELECT CustomerName FROM Customers WHERE CustomerID = 1";
+		String sql = "SELECT CustomerName, City FROM Customers WHERE CustomerID = 1";
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
@@ -65,7 +65,10 @@ public class JDBC02Servlet extends HttpServlet {
 			// 결과 탐색
 			if (rs.next()) {
 				String name = rs.getString(1);
+				String city = rs.getString(2);
+				
 				System.out.println(name);
+				System.out.println(city);
 			}
 
 		} catch (Exception e) {
