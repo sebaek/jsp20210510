@@ -15,7 +15,8 @@ FROM Customers;
 SELECT * FROM Employees
 WHERE EmployeeID = 1;
 
-SELECT DISTINCT City FROM Customers;
+SELECT DISTINCT City FROM Customers
+ORDER BY City;
 
 
 
