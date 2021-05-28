@@ -38,11 +38,11 @@ public class JDBC05Servlet extends HttpServlet {
 	
 	private void executeJDBC() {
 
-		String sql = "SELECT DISTINCT City FROM Customers";
+		String sql = "SELECT DISTINCT City FROM Customers ORDER BY City";
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
-		String password = "wnddkdwjdqhcjfll1";
+		String password = "wnddkdwjdqhcjfl1";
 
 		Connection con = null;
 		Statement stmt = null;
