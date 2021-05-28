@@ -19,8 +19,7 @@ SELECT DISTINCT City FROM Customers
 ORDER BY City;
 
 
-SELECT CustomerName FROM Customers
-WHERE CustomerID = 3;
-
+SELECT CustomerName, City FROM Customers
+WHERE CustomerID = 5;
 
 
