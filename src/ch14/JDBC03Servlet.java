@@ -66,7 +66,8 @@ public class JDBC03Servlet extends HttpServlet {
 
 			// 결과 탐색
 			if (rs.next()) {
-				String id = rs.getString(1);
+//				int id = Integer.parseInt(rs.getString(1));
+				int id = rs.getInt(1);
 				String name = rs.getString(2);
 				String city = rs.getString(3);
 				
