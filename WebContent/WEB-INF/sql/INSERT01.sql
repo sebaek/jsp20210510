@@ -27,6 +27,8 @@ VALUES
 DESC Customers;
 DESC Employees;
 
+SELECT * FROM Employees
+ORDER BY EmployeeID DESC;
 
 
 
