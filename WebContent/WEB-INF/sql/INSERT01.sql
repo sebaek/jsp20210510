@@ -18,7 +18,13 @@ INSERT INTO Customers
 VALUES
 (95, 'Back', 'Seoul');
 
+INSERT INTO Customers
+(CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+('Trump', 'Donald', 'NY', 'NY', '000', 'US');
 
+--  테이블 설명 보기
+DESC Customers;
 
 
 
