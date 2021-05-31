@@ -64,7 +64,8 @@ public class JDBC14InsertServlet extends HttpServlet {
 		
 //		executeJDBC(name, contactName, address, city, postalCode, country);
 		executeJDBC(customer);
-	
+		
+		doGet(request, response);
 	}
 	
 	private void executeJDBC(Customer customer) {
