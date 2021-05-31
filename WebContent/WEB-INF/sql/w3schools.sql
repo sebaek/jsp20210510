@@ -2,7 +2,7 @@ USE test;
 ALTER DATABASE test CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS Categories;
-CREATE TABLE Categories (CategoryID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,CategoryName NVARCHAR(255),Description NVARCHAR(255));
+CREATE TABLE Categories (CategoryID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,CategoryName VARCHAR(255),Description VARCHAR(255));
 INSERT INTO Categories (CategoryName,Description) VALUES ("Beverages","Soft drinks, coffees, teas, beers, and ales");
 INSERT INTO Categories (CategoryName,Description) VALUES ("Condiments","Sweet and savory sauces, relishes, spreads, and seasonings");
 INSERT INTO Categories (CategoryName,Description) VALUES ("Confections","Desserts, candies, and sweet breads");
@@ -13,7 +13,7 @@ INSERT INTO Categories (CategoryName,Description) VALUES ("Produce","Dried fruit
 INSERT INTO Categories (CategoryName,Description) VALUES ("Seafood","Seaweed and fish");
 
 DROP TABLE IF EXISTS Customers;
-CREATE TABLE Customers (CustomerID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,CustomerName NVARCHAR(255),ContactName NVARCHAR(255),Address NVARCHAR(255),City NVARCHAR(255),PostalCode NVARCHAR(255),Country NVARCHAR(255));
+CREATE TABLE Customers (CustomerID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,CustomerName VARCHAR(255),ContactName VARCHAR(255),Address VARCHAR(255),City VARCHAR(255),PostalCode VARCHAR(255),Country VARCHAR(255));
 INSERT INTO Customers (CustomerName,ContactName,Address,City,PostalCode,Country) VALUES ("Alfreds Futterkiste","Maria Anders","Obere Str. 57","Berlin","12209","Germany");
 INSERT INTO Customers (CustomerName,ContactName,Address,City,PostalCode,Country) VALUES ("Ana Trujillo Emparedados y helados","Ana Trujillo","Avda. de la Constitución 2222","México D.F.","05021","Mexico");
 INSERT INTO Customers (CustomerName,ContactName,Address,City,PostalCode,Country) VALUES ("Antonio Moreno Taquería","Antonio Moreno","Mataderos 2312","México D.F.","05023","Mexico");
@@ -107,7 +107,7 @@ INSERT INTO Customers (CustomerName,ContactName,Address,City,PostalCode,Country)
 INSERT INTO Customers (CustomerName,ContactName,Address,City,PostalCode,Country) VALUES ("Wolski","Zbyszek","ul. Filtrowa 68","Walla","01-012","Poland");
 
 DROP TABLE IF EXISTS Employees;
-CREATE TABLE Employees (EmployeeID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,LastName NVARCHAR(255),FirstName NVARCHAR(255),BirthDate DATE,Photo NVARCHAR(255),Notes TEXT);
+CREATE TABLE Employees (EmployeeID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,LastName VARCHAR(255),FirstName VARCHAR(255),BirthDate DATE,Photo VARCHAR(255),Notes TEXT);
 INSERT INTO Employees (LastName,FirstName,BirthDate,Photo,Notes) VALUES ("Davolio","Nancy","1968-12-08","EmpID1.pic","Education includes a BA in psychology from Colorado State University. She also completed (The Art of the Cold Call). Nancy is a member of \'Toastmasters International\'.");
 INSERT INTO Employees (LastName,FirstName,BirthDate,Photo,Notes) VALUES ("Fuller","Andrew","1952-02-19","EmpID2.pic","Andrew received his BTS commercial and a Ph.D. in international marketing from the University of Dallas. He is fluent in French and Italian and reads German. He joined the company as a sales representative, was promoted to sales manager and was then named vice president of sales. Andrew is a member of the Sales Management Roundtable, the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.");
 INSERT INTO Employees (LastName,FirstName,BirthDate,Photo,Notes) VALUES ("Leverling","Janet","1963-08-30","EmpID3.pic","Janet has a BS degree in chemistry from Boston College). She has also completed a certificate program in food retailing management. Janet was hired as a sales associate and was promoted to sales representative.");
@@ -840,7 +840,7 @@ INSERT INTO Orders (OrderID,CustomerID,EmployeeID,OrderDate,ShipperID) VALUES (1
 INSERT INTO Orders (OrderID,CustomerID,EmployeeID,OrderDate,ShipperID) VALUES (10443,66,8,"1997-02-12",1);
 
 DROP TABLE IF EXISTS Products;
-CREATE TABLE Products (ProductID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,ProductName NVARCHAR(255),SupplierID INT,CategoryID INT,Unit NVARCHAR(255),Price DECIMAL(15,2));
+CREATE TABLE Products (ProductID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,ProductName VARCHAR(255),SupplierID INT,CategoryID INT,Unit VARCHAR(255),Price DECIMAL(15,2));
 INSERT INTO Products (ProductID,ProductName,SupplierID,CategoryID,Unit,Price) VALUES (1,"Chais",1,1,"10 boxes x 20 bags",18);
 INSERT INTO Products (ProductID,ProductName,SupplierID,CategoryID,Unit,Price) VALUES (2,"Chang",1,1,"24 - 12 oz bottles",19);
 INSERT INTO Products (ProductID,ProductName,SupplierID,CategoryID,Unit,Price) VALUES (3,"Aniseed Syrup",1,2,"12 - 550 ml bottles",10);
@@ -920,13 +920,13 @@ INSERT INTO Products (ProductID,ProductName,SupplierID,CategoryID,Unit,Price) VA
 INSERT INTO Products (ProductID,ProductName,SupplierID,CategoryID,Unit,Price) VALUES (77,"Original Frankfurter grüne Soße",12,2,"12 boxes",13);
 
 DROP TABLE IF EXISTS Shippers;
-CREATE TABLE Shippers (ShipperID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,ShipperName NVARCHAR(255),Phone NVARCHAR(255));
+CREATE TABLE Shippers (ShipperID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,ShipperName VARCHAR(255),Phone VARCHAR(255));
 INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (1,"Speedy Express","(503) 555-9831");
 INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (2,"United Package","(503) 555-3199");
 INSERT INTO Shippers (ShipperID,ShipperName,Phone) VALUES (3,"Federal Shipping","(503) 555-9931");
 
 DROP TABLE IF EXISTS Suppliers;
-CREATE TABLE Suppliers (SupplierID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,SupplierName NVARCHAR(255),ContactName NVARCHAR(255),Address NVARCHAR(255),City NVARCHAR(255),PostalCode NVARCHAR(255),Country NVARCHAR(255),Phone NVARCHAR(255));
+CREATE TABLE Suppliers (SupplierID INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,SupplierName VARCHAR(255),ContactName VARCHAR(255),Address VARCHAR(255),City VARCHAR(255),PostalCode VARCHAR(255),Country VARCHAR(255),Phone VARCHAR(255));
 INSERT INTO Suppliers (SupplierID,SupplierName,ContactName,Address,City,PostalCode,Country,Phone) VALUES (1,"Exotic Liquid","Charlotte Cooper","49 Gilbert St.","Londona","EC1 4SD","UK","(171) 555-2222");
 INSERT INTO Suppliers (SupplierID,SupplierName,ContactName,Address,City,PostalCode,Country,Phone) VALUES (2,"New Orleans Cajun Delights","Shelley Burke","P.O. Box 78934","New Orleans","70117","USA","(100) 555-4822");
 INSERT INTO Suppliers (SupplierID,SupplierName,ContactName,Address,City,PostalCode,Country,Phone) VALUES (3,"Grandma Kelly\'s Homestead","Regina Murphy","707 Oxford Rd.","Ann Arbor","48104","USA","(313) 555-5735");
