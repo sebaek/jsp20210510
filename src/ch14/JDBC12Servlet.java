@@ -49,7 +49,7 @@ public class JDBC12Servlet extends HttpServlet {
 
 		List<Employee> list = new ArrayList<>(); // 리턴할 객체
 		
-		String sql = "SELECT EmployeeID, LastName, FirstName " + 
+		String sql = "SELECT EmployeeID, LastName, FirstName, Notes " + 
 				"FROM Employees ";
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
@@ -79,6 +79,7 @@ public class JDBC12Servlet extends HttpServlet {
 				employee.setId(rs.getInt(1));
 				employee.setLastName(rs.getString(2));
 				employee.setFirstName(rs.getString(3));
+				employee.setNotes(rs.getString(4));
 				
 				list.add(employee);
 			}
