@@ -35,13 +35,17 @@
 			</c:forEach>		
 		</tbody>
 	</table>
-	
-	<div>
-		<c:forEach begin="1" end="10" var="i">
-			<a href="${pageContext.request.contextPath }/JDBC13Servlet?page=${i}">${i }</a>
-			|
-		</c:forEach>
-	</div>
+
+	<div class="d-flex justify-content-center mt-3">
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <c:forEach begin="1" end="10" var="i">
+			    <li class="page-item"><a class="page-link"
+			        href="${pageContext.request.contextPath }/JDBC13Servlet?page=${i}">${i }</a></li>
+		    </c:forEach>
+		  </ul>
+		</nav>
+	</div>	
 </div>
 </body>
 </html>
