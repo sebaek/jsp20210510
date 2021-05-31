@@ -35,6 +35,13 @@
 			</c:forEach>		
 		</tbody>
 	</table>
+	
+	<div>
+		<c:forEach begin="1" end="10" var="i">
+			<a href="${pageContext.request.contextPath }/JDBC13Servlet?page=${i}">${i }</a>
+			|
+		</c:forEach>
+	</div>
 </div>
 </body>
 </html>
