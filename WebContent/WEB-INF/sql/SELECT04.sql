@@ -29,4 +29,6 @@ WHERE EmployeeID = 3;
 SELECT EmployeeID, LastName, FirstName
 FROM Employees;
 
+SELECT * FROM Employees;
+
 
