@@ -8,3 +8,19 @@ INSERT INTO Customers
 VALUES
 (92, 'Kim', 'Lee', 'Gangnam', 'Seoul', '00000', 'Korea');
 
+INSERT INTO Customers
+VALUES
+(94, 'Choi', 'Hong', 'Gangnam', 'Seoul', '00000', 'Korea');
+
+
+INSERT INTO Customers
+(CustomerID, CustomerName, ContactName)
+VALUES
+(95, 'Back', 'Seoul');
+
+
+
+
+
+
+
