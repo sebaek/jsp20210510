@@ -26,6 +26,7 @@ SELECT EmployeeID, LastName, FirstName
 FROM Employees
 WHERE EmployeeID = 3;
 
-
+SELECT EmployeeID, LastName, FirstName
+FROM Employees;
 
 
