@@ -37,7 +37,13 @@ public class JDBC13Servlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		List<Customer> list = executeJDBC();
+		String pageStr = request.getParameter("page");
+		int page = 1;
+		if (pageStr != null) {
+			page = Integer.parseInt(pageStr);
+		}
+		
+		List<Customer> list = executeJDBC(page);
 		
 		request.setAttribute("customers", list);
 		
@@ -45,13 +51,14 @@ public class JDBC13Servlet extends HttpServlet {
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 	
-	private List<Customer> executeJDBC() {
+	private List<Customer> executeJDBC(int page) {
 
 		List<Customer> list = new ArrayList<>(); // 리턴할 객체
 		
 		String sql = "SELECT CustomerID, CustomerName, City "
 				+ "FROM Customers "
-				+ "ORDER BY CustomerID ";
+				+ "ORDER BY CustomerID "
+				+ "LIMIT " + ((page-1) * 5) + ", 5" ;
 
 		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
 		String user = "root";
