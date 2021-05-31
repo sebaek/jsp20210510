@@ -16,19 +16,19 @@ LIMIT 10;
 
 SELECT * FROM Customers
 ORDER BY CustomerID
-LIMIT 0, 10; -- 1page
+LIMIT 0, 5; -- 1page
 
 SELECT * FROM Customers
 ORDER BY CustomerID
-LIMIT 10, 10; -- 2page
+LIMIT 5, 5; -- 2page
 
 SELECT * FROM Customers
 ORDER BY CustomerID
-LIMIT 20, 10; -- 3page
+LIMIT 10, 5; -- 3page
 
 SELECT * FROM Customers
 ORDER BY CustomerID
-LIMIT 30, 10; -- 4page
+LIMIT 15, 5; -- 4page
 
 
 
