@@ -132,18 +132,111 @@ public class JDBC16UpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// code 추가..
+		request.setCharacterEncoding("utf-8");
 		
-//		updateCustomer(customer);
+		// request 파라미터 수집,
+		// Cutomer 객체 완성
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String contactName = request.getParameter("contactName");
+		String address = request.getParameter("address");
+		String city = request.getParameter("city");
+		String postalCode = request.getParameter("postalCode");
+		String country = request.getParameter("country");
+		
+		Customer customer = new Customer();
+		customer.setId(Integer.parseInt(id));
+		customer.setName(name);
+		customer.setContactName(contactName);
+		customer.setAddress(address);
+		customer.setCity(city);
+		customer.setPostalCode(postalCode);
+		customer.setCountry(country);
+		
+		updateCustomer(customer);
 		
 		doGet(request, response);
 	}
 	
 	private void updateCustomer(Customer customer) {
-		// code 완성..
+		
+		String sql = " UPDATE Customers "
+				+ "    SET CustomerName = ?, "
+				+ "        ContactName = ?,"
+				+ "        Address = ?, "
+				+ "        City = ?, "
+				+ "        PostalCode = ?, "
+				+ "        Country = ? "
+				+ "    WHERE CustomerID = ? ";
+		
+		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
+		String user = "root";
+		String password = "wnddkdwjdqhcjfl1";
+
+		Connection con = null;
+		PreparedStatement stmt = null;
+
+		try {
+			// 클래스 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// 연결
+			con = DriverManager.getConnection(url, user, password);
+
+			// preparedStatement 생성
+			stmt = con.prepareStatement(sql);
+			
+			// ? (파라미터)에 값 할당
+			stmt.setString(1, customer.getName());
+			stmt.setString(2, customer.getContactName());
+			stmt.setString(3, customer.getAddress());
+			stmt.setString(4, customer.getCity());
+			stmt.setString(5, customer.getPostalCode());
+			stmt.setString(6, customer.getCountry());
+			stmt.setInt(7, customer.getId());
+
+			// 쿼리 실행, 결과(ResultSet) 리턴
+			int cnt = stmt.executeUpdate();
+
+			if (cnt == 1) {
+				System.out.println("수정 성공");
+			} else {
+				System.out.println("수정 실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 연결 닫기
+			if (stmt != null) {
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 	}
 
 }
+
+
+
+
+
+
+
+
 
 
 
