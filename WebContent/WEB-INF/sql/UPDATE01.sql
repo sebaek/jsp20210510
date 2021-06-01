@@ -1,5 +1,5 @@
 SELECT * FROM Customers
-WHERE CustomerID =32;
+WHERE CustomerID =1;
 
 UPDATE Customers
 SET CustomerName = '스파이더맨';
