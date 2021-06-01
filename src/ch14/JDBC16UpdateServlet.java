@@ -134,7 +134,7 @@ public class JDBC16UpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// code 추가..
 		
-		updateCustomer(customer);
+//		updateCustomer(customer);
 		
 		doGet(request, response);
 	}
