@@ -132,8 +132,15 @@ public class JDBC16UpdateServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// code 추가..
+		
+		updateCustomer(customer);
+		
 		doGet(request, response);
+	}
+	
+	private void updateCustomer(Customer customer) {
+		// code 완성..
 	}
 
 }
