@@ -17,7 +17,26 @@
 </head>
 <body>
 <div class="container">
-	
+	<form action="" method="post">
+		id : <input type="text" readonly name="id" value="${customer.id }"> <br>
+		name : <input type="text" name="name" value="${customer.name }"> <br>
+		contact name : <input type="text" name="contactName" value="${customer.contactName }"> <br>
+		address : <input type="text" name="address" value="${customer.address }"> <br>
+		city : <input type="text" name="city" value="${customer.city }"> <br>
+		postal code : <input type="text" name="postalCode" value="${customer.postalCode }"> <br>
+		country : <input type="text" name="country" value="${customer.country }"> <br>
+		<input type="submit" >
+	</form>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
