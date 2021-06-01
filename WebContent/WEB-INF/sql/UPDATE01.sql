@@ -39,3 +39,5 @@ WHERE CustomerID = 32;
 
 
 
+SELECT * FROM Employees
+WHERE EmployeeID = 2;
