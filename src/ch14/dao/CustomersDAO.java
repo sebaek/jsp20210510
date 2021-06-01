@@ -160,4 +160,66 @@ public class CustomersDAO {
 			}
 		}
 	}
+
+	public void deleteCustomer(int id) {
+		String sql = "DELETE FROM Customers WHERE CustomerID = ?";
+		
+		String url = "jdbc:mysql://13.125.118.27/test"; // 본인 ip
+		String user = "root";
+		String password = "wnddkdwjdqhcjfl1";
+
+		Connection con = null;
+		PreparedStatement stmt = null;
+
+		try {
+			// 클래스 로딩
+			Class.forName("com.mysql.cj.jdbc.Driver");
+
+			// 연결
+			con = DriverManager.getConnection(url, user, password);
+
+			// preparedStatement 생성
+			stmt = con.prepareStatement(sql);
+			
+			// ? (파라미터)에 값 할당
+			stmt.setInt(1, id);
+
+			// 쿼리 실행, 결과(ResultSet) 리턴
+			int cnt = stmt.executeUpdate();
+
+			if (cnt == 1) {
+				System.out.println("삭제 성공");
+			} else {
+				System.out.println("삭제 실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			// 연결 닫기
+			if (stmt != null) {
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
 }
+
+
+
+
+

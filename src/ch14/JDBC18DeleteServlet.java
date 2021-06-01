@@ -45,8 +45,22 @@ public class JDBC18DeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String id = request.getParameter("id");
+		CustomersDAO customersDAO = new CustomersDAO();
+		
+		customersDAO.deleteCustomer(Integer.parseInt(id));
+		
 		doGet(request, response);
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
