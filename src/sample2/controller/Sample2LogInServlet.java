@@ -47,7 +47,7 @@ public class Sample2LogInServlet extends HttpServlet {
 		MemberDao dao = new MemberDao();
 		Member member = dao.getMember(id);
 		
-		if (member.getPassword().equals(password)) {
+		if (member != null && member.getPassword().equals(password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userLogined", member);
 			String path = request.getContextPath() + "/sample2/main";
