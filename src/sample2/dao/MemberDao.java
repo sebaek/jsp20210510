@@ -104,6 +104,33 @@ public class MemberDao {
 		
 		return list;
 	}
+
+	public Member getMember(String id) {
+		String sql = "SELECT id, password, name, birth, inserted "
+				+ "FROM Member "
+				+ "WHERE id = ?";
+		
+		ResultSet rs = null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
+	}
 	
 }
 
