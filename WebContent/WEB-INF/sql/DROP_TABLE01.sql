@@ -1,0 +1,2 @@
+DROP TABLE MyTable1;
+SELECT * FROM MyTable1;
