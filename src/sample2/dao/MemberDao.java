@@ -20,6 +20,12 @@ public class MemberDao {
 		this.url = "jdbc:mysql://13.125.118.27/test2";
 		this.user = "root";
 		this.password = "wnddkdwjdqhcjfl1";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public boolean insert(Member member) {
@@ -32,7 +38,7 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+
 			con = DriverManager.getConnection(url, user, password);
 			pstmt = con.prepareStatement(sql);
 			

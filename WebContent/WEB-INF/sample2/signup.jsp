@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<s2:navbar></s2:navbar>
 <div class="container">
 	<form action="${pageContext.request.contextPath }/sample2/signup" method="post">
 		id : <br>
