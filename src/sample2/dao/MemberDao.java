@@ -3,7 +3,11 @@ package sample2.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import sample2.bean.Member;
 
@@ -64,5 +68,48 @@ public class MemberDao {
 		
 		return false;
 	}
+
+	public List<Member> list() {
+		List<Member> list = new ArrayList<>();
+		
+		String sql = "SELECT id, password, name, birth, inserted "
+				+ "FROM Member";
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(1));
+				member.setPassword(rs.getString(2));
+				member.setName(rs.getString(3));
+				member.setBirth(rs.getDate(4));
+				member.setInserted(rs.getTimestamp(5));
+				
+				list.add(member);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

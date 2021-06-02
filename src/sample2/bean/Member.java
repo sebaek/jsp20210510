@@ -1,13 +1,21 @@
 package sample2.bean;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Member {
 	private String id;
 	private String password;
 	private String name;
 	private Date birth;
+	private Timestamp inserted;
 	
+	public Timestamp getInserted() {
+		return inserted;
+	}
+	public void setInserted(Timestamp inserted) {
+		this.inserted = inserted;
+	}
 	public String getId() {
 		return id;
 	}
