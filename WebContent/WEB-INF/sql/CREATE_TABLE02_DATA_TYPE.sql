@@ -40,6 +40,23 @@ SELECT * FROM MyTable4;
 
 
 -- char(String)
+CREATE TABLE MyTable5
+(
+	Col1 CHAR(5),   -- 고정 자리수
+    Col2 VARCHAR(5) -- 가변 자리수
+);
+
+INSERT INTO MyTable5
+(Col1, Col2)
+VALUES
+('abc', 'abc');
+
+INSERT INTO MyTable5
+(Col1, Col2)
+VALUES
+('abcde', 'abcde');
+
+SELECT * FROM MyTable5;
 
 -- date, datetime
 
