@@ -67,5 +67,25 @@ SET sql_mode = '';
 SELECT * FROM MyTable5;
 -- 'abc', 'abc'
 
--- date, datetime
+-- date, datetime, timestamp
+CREATE TABLE MyTable6
+(
+	Col1 DATE,
+    Col2 DATETIME,
+    Col3 TIMESTAMP
+);
+INSERT INTO MyTable6
+(Col1, Col2, Col3)
+VALUES
+('2021-06-02',
+ '2021-06-02 11:07:30',
+ '2021-06-02 11:07:30');
+ SELECT * FROM MyTable6;
+ 
+
+
+
+
+
+
 
