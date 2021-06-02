@@ -1,11 +1,16 @@
 package sample2.controller;
 
 import java.io.IOException;
+import java.sql.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import sample2.bean.Member;
+import sample2.dao.MemberDao;
 
 /**
  * Servlet implementation class Sample2SignUpServlet
@@ -46,7 +51,7 @@ public class Sample2SignUpServlet extends HttpServlet {
 		member.setId(id);
 		member.setPassword(password);
 		member.setName(name);
-		member.setBirth(birth);
+		member.setBirth(Date.valueOf(birth));
 		
 		// dao insert 메소드 호출
 		MemberDao dao = new MemberDao();
