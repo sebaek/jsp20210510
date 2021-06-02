@@ -22,3 +22,5 @@ SELECT * FROM Customers;
 
 DELETE FROM Customers;
 
+SELECT * FROM Employees
+ORDER BY EmployeeID;
