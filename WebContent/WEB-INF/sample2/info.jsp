@@ -25,6 +25,10 @@
 			var con = confirm("탈퇴 하시겠습니까??");
 			
 			console.log(con);
+			
+			if (con) {
+				$("#form2").submit();
+			}
 		});
 	});
 </script>
