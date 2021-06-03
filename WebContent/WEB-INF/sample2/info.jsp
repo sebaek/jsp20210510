@@ -36,6 +36,12 @@
 		<button id="button1" type="button" >수정</button>
 		<input type="submit" id="submit1" value="전송" hidden>
 	</form>
+	
+	<c:if test="${not empty message }">
+		<div>
+			${message }
+		</div>
+	</c:if>
 </div>
 </body>
 </html>

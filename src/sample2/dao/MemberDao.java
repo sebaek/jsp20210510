@@ -144,6 +144,54 @@ public class MemberDao {
 		
 		return null;
 	}
+
+	public boolean update(Member member) {
+		String sql = "UPDATE Member "
+				+ "SET password = ?, "
+				+ "    name = ?, "
+				+ "    birth = ? "
+				+ "WHERE id = ? ";
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+
+			con = DriverManager.getConnection(url, user, password);
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getPassword());
+			pstmt.setString(2, member.getName());
+			pstmt.setDate(3, member.getBirth());
+			pstmt.setString(4, member.getId());
+			
+			int cnt = pstmt.executeUpdate();
+			
+			if (cnt > 0) {
+				return true;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return false;
+	}
 	
 }
 
