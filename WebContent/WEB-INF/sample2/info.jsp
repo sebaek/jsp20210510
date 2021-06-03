@@ -11,21 +11,36 @@
 <%@ include file="/WEB-INF/subModules/bootstrapHeader.jsp" %>
 
 <title>Insert title here</title>
+<script>
+	$(document).ready(function() {
+		$("#button1").click(function() {
+			$("#input2, #input3, #input4").removeAttr("readonly");
+			$("#submit1").removeAttr("hidden");
+		});
+	});
+</script>
+
 </head>
 <body>
 <s2:navbar></s2:navbar>
 <div class="container">
-	<form action="" method="post">
+	<form id="form1" action="${pageContext.request.contextPath }/sample2/modify" method="post">
 		id : <br>
-		<input type="text" name="id" value="${member.id }" readonly> <br>
+		<input id="input1" type="text" name="id" value="${member.id }" readonly> <br>
 		pw : <br>
-		<input type="password" name="password" value="${member.password }" readonly> <br>
+		<input id="input2" type="password" name="password" value="${member.password }" readonly> <br>
 		name : <br>	
-		<input type="text" name="name" value="${member.name }" readonly> <br>
+		<input id="input3" type="text" name="name" value="${member.name }" readonly> <br>
 		birth day: <br>
-		<input type="date" name="birth" value="${member.birth }" readonly> <br>
-		
+		<input id="input4" type="date" name="birth" value="${member.birth }" readonly> <br>
+		<button id="button1" type="button" >수정</button>
+		<input type="submit" id="submit1" value="전송" hidden>
 	</form>
 </div>
 </body>
 </html>
+
+
+
+
+
