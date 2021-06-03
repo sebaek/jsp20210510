@@ -63,6 +63,7 @@ public class Sample2ModifyServlet extends HttpServlet {
 		}
 		
 		request.setAttribute("message", message);
+		request.setAttribute("member", member);
 		
 		String path = "/WEB-INF/sample2/info.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
