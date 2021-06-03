@@ -37,4 +37,14 @@ WHERE id IS NOT NULL;
 -- IFNULL
 SELECT ifnull(id, 0), name FROM MyTable9;
 
+-- 
+CREATE TABLE MyTable10
+(
+id INT UNIQUE NOT NULL,
+name VARCHAR(255) NOT NULL
+);
+
+
+
+
 
