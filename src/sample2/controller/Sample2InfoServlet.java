@@ -34,13 +34,18 @@ public class Sample2InfoServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member member = (Member) session.getAttribute("userLogined");
 		
-		MemberDao dao = new MemberDao();
-		Member mem = dao.getMember(member.getId());
-		
-		request.setAttribute("member", mem);
-		
-		String path = "/WEB-INF/sample2/info.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
+		if (member != null) {
+			MemberDao dao = new MemberDao();
+			Member mem = dao.getMember(member.getId());
+			
+			request.setAttribute("member", mem);
+			
+			String path = "/WEB-INF/sample2/info.jsp";
+			request.getRequestDispatcher(path).forward(request, response);
+		} else {
+			String path = request.getContextPath() + "/sample2/main";
+			response.sendRedirect(path);
+		}
 		
 	}
 
