@@ -27,3 +27,14 @@ INSERT INTO MyTable9
 VALUES 
 ('donald');
 
+-- NULL
+SELECT * FROM MyTable9
+WHERE id IS NULL;
+
+SELECT * FROM MyTable9
+WHERE id IS NOT NULL;
+
+-- IFNULL
+SELECT ifnull(id, 0), name FROM MyTable9;
+
+
