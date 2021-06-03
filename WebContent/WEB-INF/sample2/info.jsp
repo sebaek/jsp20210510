@@ -43,6 +43,12 @@
 		</div>
 	</c:if>
 </div>
+
+<div class="container">
+	<form action="${pageContext.request.contextPath}/sample2/remove" method="post">
+		<input type="submit" value="탈퇴">
+	</form>
+</div>
 </body>
 </html>
 
