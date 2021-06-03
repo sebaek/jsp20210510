@@ -33,7 +33,7 @@ INSERT INTO MyTable8
 INSERT INTO MyTable8
 (name) VALUES ('donald'); -- x
 
-
+DESC MyTable8;
 
 
 
