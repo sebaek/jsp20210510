@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import sample2.bean.Board;
 import sample2.bean.Member;
+import sample2.dao.BoardDao;
 
 /**
  * Servlet implementation class Sample2BoardWriteServlet

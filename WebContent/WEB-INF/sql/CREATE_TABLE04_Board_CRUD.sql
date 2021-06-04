@@ -10,4 +10,4 @@ CREATE TABLE Board
     inserted TIMESTAMP DEFAULT NOW()
 );
 DESC Board;
-
+SELECT * FROM Board;
