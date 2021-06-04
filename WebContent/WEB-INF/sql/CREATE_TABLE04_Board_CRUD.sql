@@ -15,6 +15,13 @@ SELECT * FROM Member;
 
 USE test2;
 
+DELETE FROM Board
+WHERE memberId NOT IN (
+	SELECT id FROM Member
+);
+
+SELECT * FROM Board;
+
 ALTER TABLE Board
 ADD FOREIGN KEY (MemberId)
 REFERENCES Member(id);
