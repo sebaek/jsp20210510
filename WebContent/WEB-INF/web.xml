@@ -203,6 +203,15 @@
   	<url-pattern>/sample2/*</url-pattern>
   </filter-mapping>
   
+  <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>sample2.filter.LoginFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>/sample2/board/write</url-pattern>
+  </filter-mapping>
 </web-app>
 
 
