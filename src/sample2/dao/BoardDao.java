@@ -3,9 +3,10 @@ package sample2.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.tomcat.dbcp.dbcp2.DriverManagerConnectionFactory;
 
 import sample2.bean.Board;
 
@@ -55,11 +56,34 @@ public class BoardDao {
 	}
 
 	public List<Board> list() {
+		List<Board> list = new ArrayList<>();
+		
 		String sql = "SELECT id, title, memberId, inserted "
 				+ "FROM Board "
 				+ "ORDER BY id DESC ";
 		
-		return null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				Board board = new Board();
+				board.setId(rs.getInt(1));
+				board.setTitle(rs.getString(2));
+				board.setMemberId(rs.getString(3));
+				board.setInserted(rs.getTimestamp(4));
+				
+				list.add(board);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
 	}
 	
 }
