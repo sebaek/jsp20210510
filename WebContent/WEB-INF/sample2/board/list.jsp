@@ -36,8 +36,8 @@
 							${board.title }
 						</a>
 					</td>
-					<td>${board.memberId }</td>
-					<td>${board.inserted }</td>
+					<td>${board.memberIdHidden }</td>
+					<td>${board.timeAgo }</td>
 				</tr>
 			</c:forEach>
 		</tbody>

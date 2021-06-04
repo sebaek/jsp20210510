@@ -23,10 +23,10 @@
 	<textarea readonly>${board.body }</textarea>
 	<br>
 	작성자 : <br>
-	<input type="text" value="${board.memberId }" readonly>
+	<input type="text" value="${board.memberIdHidden }" readonly>
 	<br>
 	작성시간 : <br>
-	<input type="text" value="${board.inserted }" readonly>
+	<input type="text" value="${board.timeAgo }" readonly>
 	
 	
 </div>
