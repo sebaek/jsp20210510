@@ -41,7 +41,7 @@ public class Sample2BoardDetailServlet extends HttpServlet {
 			
 			request.setAttribute("board", board);
 			
-			String path = "/WEB-INF/sample2/detail.jsp";
+			String path = "/WEB-INF/sample2/board/detail.jsp";
 			request.getRequestDispatcher(path).forward(request, response);
 		}
 		
