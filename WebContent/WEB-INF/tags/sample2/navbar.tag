@@ -17,7 +17,9 @@
 		|
 		<a href="<%= request.getContextPath() %>/sample2/member/logout">로그아웃</a>
 		|
+		<a href="<%= request.getContextPath() %>/sample2/board/write">글쓰기</a>
 	</c:if>
+	<a href="<%= request.getContextPath() %>/sample2/board/list">글 목록보기</a>
 	<a href="<%= request.getContextPath() %>/sample2/member/list">목록보기</a>
 </div>
 
