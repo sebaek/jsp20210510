@@ -1,28 +1,23 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sample2.bean.Member;
-import sample2.dao.MemberDao;
-
 /**
- * Servlet implementation class Sample2ListServlet
+ * Servlet implementation class Sample2MainServlet
  */
-@WebServlet("/sample2/list")
-public class Sample2ListServlet extends HttpServlet {
+@WebServlet("/sample2/main")
+public class Sample2MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2ListServlet() {
+    public Sample2MainServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,19 +26,8 @@ public class Sample2ListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MemberDao dao = new MemberDao();
-		
-		// db에서 회원 list 얻어서
-		List<Member> list = dao.list();
-		
-		// request attribute에 붙여서
-		request.setAttribute("members", list);
-		
-		// forward
-		String path = "/WEB-INF/sample2/list.jsp";
+		String path = "/WEB-INF/sample2/main.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
-		
-	
 	}
 
 	/**

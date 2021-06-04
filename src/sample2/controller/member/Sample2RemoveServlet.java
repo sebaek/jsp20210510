@@ -1,4 +1,4 @@
-package sample2.controller;
+package sample2.controller.member;
 
 import java.io.IOException;
 
@@ -13,16 +13,16 @@ import sample2.bean.Member;
 import sample2.dao.MemberDao;
 
 /**
- * Servlet implementation class Sample2LogInServlet
+ * Servlet implementation class Sample2RemoveServlet
  */
-@WebServlet("/sample2/login")
-public class Sample2LogInServlet extends HttpServlet {
+@WebServlet("/sample2/remove")
+public class Sample2RemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Sample2LogInServlet() {
+    public Sample2RemoveServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,32 +31,24 @@ public class Sample2LogInServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/sample2/login.jsp";
-		request.getRequestDispatcher(path).forward(request, response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
-		
+		HttpSession session = request.getSession();
+		Member member = (Member) session.getAttribute("userLogined");
+	
 		MemberDao dao = new MemberDao();
-		Member member = dao.getMember(id);
+		dao.remove(member.getId());
 		
-		if (member != null && member.getPassword().equals(password)) {
-			HttpSession session = request.getSession();
-			session.setAttribute("userLogined", member);
-			String path = request.getContextPath() + "/sample2/main";
-			response.sendRedirect(path);
-		} else {
-			String path = "/WEB-INF/sample2/login.jsp";
-			request.setAttribute("message", "아이디나 패스워드가 일치하지 않습니다");
-			request.getRequestDispatcher(path).forward(request, response);
-		}
+		session.invalidate();
+		
+		String path = request.getContextPath() + "/sample2/main";
+		response.sendRedirect(path);
 	}
 
 }
