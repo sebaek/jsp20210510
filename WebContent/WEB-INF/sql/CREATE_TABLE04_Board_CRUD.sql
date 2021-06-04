@@ -13,6 +13,11 @@ DESC Board;
 SELECT * FROM Board;
 SELECT * FROM Member;
 
+USE test2;
+
+ALTER TABLE Board
+ADD FOREIGN KEY (MemberId)
+REFERENCES Member(id);
 
 
 
