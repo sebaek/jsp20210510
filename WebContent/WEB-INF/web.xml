@@ -211,6 +211,8 @@
   <filter-mapping>
   	<filter-name>loginFilter</filter-name>
   	<url-pattern>/sample2/board/write</url-pattern>
+  	<url-pattern>/sample2/member/info</url-pattern>
+  	<url-pattern>/sample2/member/list</url-pattern>
   </filter-mapping>
 </web-app>
 
