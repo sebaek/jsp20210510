@@ -15,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2RemoveServlet
  */
-@WebServlet("/sample2/remove")
+@WebServlet("/sample2/member/remove")
 public class Sample2RemoveServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

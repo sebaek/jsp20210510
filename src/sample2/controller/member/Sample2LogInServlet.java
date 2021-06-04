@@ -15,7 +15,7 @@ import sample2.dao.MemberDao;
 /**
  * Servlet implementation class Sample2LogInServlet
  */
-@WebServlet("/sample2/login")
+@WebServlet("/sample2/member/login")
 public class Sample2LogInServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -31,7 +31,7 @@ public class Sample2LogInServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "/WEB-INF/sample2/login.jsp";
+		String path = "/WEB-INF/sample2/member/login.jsp";
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
@@ -53,7 +53,7 @@ public class Sample2LogInServlet extends HttpServlet {
 			String path = request.getContextPath() + "/sample2/main";
 			response.sendRedirect(path);
 		} else {
-			String path = "/WEB-INF/sample2/login.jsp";
+			String path = "/WEB-INF/sample2/member/login.jsp";
 			request.setAttribute("message", "아이디나 패스워드가 일치하지 않습니다");
 			request.getRequestDispatcher(path).forward(request, response);
 		}

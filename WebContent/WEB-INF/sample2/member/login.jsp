@@ -16,7 +16,7 @@
 <s2:navbar></s2:navbar>
 <div class="container">
 	<h1>로그인</h1>
-	<form method="post" action="${pageContext.request.contextPath }/sample2/login">
+	<form method="post" action="${pageContext.request.contextPath }/sample2/member/login">
 		id <br>
 		<input type="text" name="id" > <br>
 		pw <br>
