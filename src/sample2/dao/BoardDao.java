@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -84,6 +85,47 @@ public class BoardDao {
 		
 		
 		return list;
+	}
+
+	public Board get(int id) {
+		String sql = "SELECT id, title, body, memberId, inserted "
+				+ "FROM Board "
+				+ "WHERE id = ? ";
+		
+		ResultSet rs = null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			
+				) {
+			pstmt.setInt(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Board board = new Board();
+				board.setId(id);
+				board.setTitle(rs.getString(2));
+				board.setBody(rs.getString(3));
+				board.setMemberId(rs.getString(4));
+				board.setInserted(rs.getTimestamp(5));
+				
+				return board;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 }
