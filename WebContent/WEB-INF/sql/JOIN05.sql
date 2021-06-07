@@ -14,4 +14,13 @@ JOIN Customers c ON o.CustomerID = c.CustomerID
 JOIN Employees e ON o.EmployeeID = e.EmployeeID
 ;
 
+-- 주문의 고객명, 직원명(lastName + firstName)
+SELECT o.OrderID, 
+c.CustomerName, 
+concat(e.LastName, ', ', e.FirstName) EmployeeName
+FROM Orders o 
+JOIN Customers c ON o.CustomerID = c.CustomerID
+JOIN Employees e ON o.EmployeeID = e.EmployeeID
+;
+
 -- desc Employees;
