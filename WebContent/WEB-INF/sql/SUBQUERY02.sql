@@ -11,3 +11,12 @@ SELECT * FROM Customers WHERE CustomerID IN (SELECT CustomerID FROM Orders);
 
 -- 주문 한 적 없는 고객들
 SELECT * FROM Customers WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
+
+DESC Orders;
+
+-- 주문을 처리하는 직원 목록
+
+-- 주문을 처리하지 않는 직원 목록
+
+
+
