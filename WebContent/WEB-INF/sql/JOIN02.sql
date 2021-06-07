@@ -27,6 +27,9 @@ INSERT INTO Likes (userId, `like`)  VALUES (4, 'Apples');
 SELECT * FROM Users;
 SELECT * FROM Likes;
 
+SELECT * FROM Users, Likes; -- 25개
+
+
 
 
 
