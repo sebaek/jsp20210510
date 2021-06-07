@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import sample2.bean.Board;
+import sample2.bean.BoardDto;
 import sample2.dao.BoardDao;
 
 /**
@@ -32,7 +32,8 @@ public class Sample2BoardListServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDao dao = new BoardDao();
-		List<Board> boardList = dao.list();
+//		List<Board> boardList = dao.list();
+		List<BoardDto> boardList = dao.list2();
 		
 		request.setAttribute("boards", boardList);
 		
