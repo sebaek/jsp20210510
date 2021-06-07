@@ -46,3 +46,7 @@ SELECT * FROM Table03
 UNION ALL
 SELECT city FROM Table04;
 
+
+
+
+
