@@ -165,6 +165,50 @@ public class BoardDao {
 		return null;
 	}
 	
+	public BoardDto get2(int id) {
+		String sql = "SELECT b.id boardId,"
+				+ "          b.title title,"
+				+ "          b.body body,"
+				+ "          m.name memberName,"
+				+ "          b.inserted "
+				+ "FROM Board b JOIN Member m ON b.memberId = m.id "
+				+ "WHERE b.id = ? ";
+		
+		ResultSet rs = null;
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			
+				) {
+			pstmt.setInt(1, id);
+			
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				Board board = new Board();
+				board.setId(id);
+				board.setTitle(rs.getString(2));
+				board.setBody(rs.getString(3));
+				board.setMemberId(rs.getString(4));
+				board.setInserted(rs.getTimestamp(5));
+				
+				return board;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		return null;
+	}
 }
 
 
