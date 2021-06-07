@@ -32,7 +32,7 @@
 				<tr>
 					<td>${board.boardId }</td>
 					<td>
-						<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.id}">
+						<a href="<%= request.getContextPath() %>/sample2/board/detail?id=${board.boardId}">
 							${board.title }
 						</a>
 					</td>
