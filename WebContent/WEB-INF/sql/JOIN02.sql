@@ -18,13 +18,14 @@ INSERT INTO Users (id, name) VALUES (3, 'Maria');
 INSERT INTO Users (id, name) VALUES (4, 'Darwin');
 INSERT INTO Users (id, name) VALUES (5, 'Elizabeth');
 
-select * from Users;
-
 INSERT INTO Likes (userId, `like`)  VALUES (3, 'Stars');
 INSERT INTO Likes (userId, `like`)  VALUES (1, 'Climbing');
 INSERT INTO Likes (userId, `like`)  VALUES (1, 'Code');
 INSERT INTO Likes (userId, `like`)  VALUES (6, 'Rugby');
 INSERT INTO Likes (userId, `like`)  VALUES (4, 'Apples');
+
+SELECT * FROM Users;
+SELECT * FROM Likes;
 
 
 
