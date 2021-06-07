@@ -185,11 +185,11 @@ public class BoardDao {
 			rs = pstmt.executeQuery();
 			
 			if (rs.next()) {
-				Board board = new Board();
-				board.setId(id);
+				BoardDto board = new BoardDto();
+				board.setBoardId(id);
 				board.setTitle(rs.getString(2));
 				board.setBody(rs.getString(3));
-				board.setMemberId(rs.getString(4));
+				board.setMemberName(rs.getString(4));
 				board.setInserted(rs.getTimestamp(5));
 				
 				return board;
