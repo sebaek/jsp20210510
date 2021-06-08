@@ -27,11 +27,18 @@
 	<br>
 	작성시간 : <br>
 	<input type="text" value="${board.timeAgo }" readonly>
-	
+
+	<c:if test="${sessionScope.userLogined.id == board.memberId  }" >
+		<input type="submit" value="수정" >
+	</c:if>	
 	
 </div>
 </body>
 </html>
+
+
+
+
 
 
 

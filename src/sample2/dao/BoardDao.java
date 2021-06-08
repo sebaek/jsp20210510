@@ -170,6 +170,7 @@ public class BoardDao {
 				+ "          b.title title,"
 				+ "          b.body body,"
 				+ "          m.name memberName,"
+				+ "          m.id memberID, "
 				+ "          b.inserted "
 				+ "FROM Board b JOIN Member m ON b.memberId = m.id "
 				+ "WHERE b.id = ? ";
@@ -190,7 +191,8 @@ public class BoardDao {
 				board.setTitle(rs.getString(2));
 				board.setBody(rs.getString(3));
 				board.setMemberName(rs.getString(4));
-				board.setInserted(rs.getTimestamp(5));
+				board.setMemberId(rs.getString(5));
+				board.setInserted(rs.getTimestamp(6));
 				
 				return board;
 			}
