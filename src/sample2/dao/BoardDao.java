@@ -211,7 +211,37 @@ public class BoardDao {
 		
 		return null;
 	}
+
+	public boolean modify(BoardDto newBoard) {
+		String sql = "UPDATE Board "
+				+ " SET title = ?, "
+				+ "     body = ? "
+				+ " WHERE id = ? ";
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			
+			pstmt.setString(1, newBoard.getTitle());
+			pstmt.setString(2, newBoard.getBody());
+			pstmt.setInt(3, newBoard.getBoardId());
+			
+			int cnt = pstmt.executeUpdate();
+			
+			return cnt == 1;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 }
+
+
+
+
 
 
 
