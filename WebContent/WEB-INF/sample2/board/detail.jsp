@@ -17,7 +17,7 @@
 <div class="container">
 	<h1>${board.boardId }번 글 보기</h1>
 	
-	<form action="${pageContext.request.contextPath }/sample2/board/modify" method="post">
+	<form id="form1" action="${pageContext.request.contextPath }/sample2/board/modify" method="post">
 	
 	
 	제목 : <br>
@@ -36,8 +36,19 @@
 		<script>
 			$(document).ready(function() {
 				$("#button1").click(function() {
-					$("#submit1").removeAttr("hidden");
+					$("#submit1, #submit2").removeAttr("hidden");
 					$("#input1, #textarea1").removeAttr("readonly");
+				});
+				
+				$("#submit2").click(function(e) {
+					e.preventDefault();
+					
+					if (confirm("삭제 하시겠습니까?")) {
+						var path = '${pageContext.request.contextPath }/sample2/board/remove';
+						$("#form1").attr("action", path);
+						$("#form1").submit();
+					}
+					
 				});
 			});	
 		</script>
@@ -46,6 +57,7 @@
 		<input type="number" value="${board.boardId }" name="boardId" hidden >
 		<button id="button1" type="button">수정</button>
 		<input id="submit1" hidden type="submit" value="전송" >
+		<input id="submit2" hidden type="submit" value="삭제" >
 	</c:if>
 	
 	</form>	
