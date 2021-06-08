@@ -50,6 +50,7 @@
 	
 	</form>	
 	
+	<s2:message />
 </div>
 </body>
 </html>
