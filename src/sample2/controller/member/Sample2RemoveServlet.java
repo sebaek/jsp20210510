@@ -51,7 +51,7 @@ public class Sample2RemoveServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member member = (Member) session.getAttribute("userLogined");
 		
-		this.service.remove();
+		this.service.remove(member.getId());
 		
 		session.invalidate();
 		

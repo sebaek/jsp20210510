@@ -257,6 +257,22 @@ public class BoardDao {
 		
 		return false;
 	}
+
+	public void removeByMember(String id, Connection con) {
+		String sql = "DELETE FROM Board WHERE memberId = ?";
+		
+		try (
+			PreparedStatement pstmt = con.prepareStatement(sql);	
+				) {
+			
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }
 
 
