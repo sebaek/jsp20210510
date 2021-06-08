@@ -237,6 +237,26 @@ public class BoardDao {
 		
 		return false;
 	}
+
+	public boolean remove(int id) {
+		String sql = "DELETE FROM Board WHERE id = ?";
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			
+			pstmt.setInt(1, id);
+			int cnt = pstmt.executeUpdate();
+			
+			return cnt == 1;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 }
 
 
