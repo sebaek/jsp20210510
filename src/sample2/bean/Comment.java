@@ -1,6 +1,7 @@
 package sample2.bean;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 public class Comment {
 
@@ -9,6 +10,31 @@ public class Comment {
 	private int boardId;
 	private String comment;
 	private Timestamp inserted;
+	private String memberName;
+	
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+	
+	public String getTimeAgo() {
+		long now = System.currentTimeMillis();
+		long inserted = this.inserted.getTime();
+		
+		long diff = now - inserted;
+		
+		diff /= 1000;
+		
+		if (diff < 60 * 60) {
+			return (diff / 60) + "분 전";
+		} else if (diff < 60 * 60 * 24) {
+			return (diff / (60 * 60)) + "시간 전";
+		} else {
+			return new SimpleDateFormat("yy/MM/dd").format(this.inserted);
+		}
+	}
 	
 	public int getId() {
 		return id;

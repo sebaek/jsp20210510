@@ -77,6 +77,16 @@
 		<input type="submit" value="댓글작성">
 	</form>
 </div>
+
+<div class="container mt-5">
+	<c:forEach items="${comments }" var="comment">
+		<div>
+			<textarea>${comment.comment }</textarea>
+			<span>${comment.memberName }</span>
+			<span>${comment.timeAgo }</span>
+		</div>
+	</c:forEach>
+</div>
 </c:if>
 </body>
 </html>

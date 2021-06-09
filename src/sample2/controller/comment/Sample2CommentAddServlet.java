@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import sample2.bean.Comment;
-import sample2.service.comment.CommentAddService;
+import sample2.service.comment.CommentService;
 
 /**
  * Servlet implementation class Sample2CommentAddServlet
@@ -18,7 +18,7 @@ import sample2.service.comment.CommentAddService;
 public class Sample2CommentAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private CommentAddService service;
+	private CommentService service;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,7 +32,7 @@ public class Sample2CommentAddServlet extends HttpServlet {
     public void init() throws ServletException {
     	// TODO Auto-generated method stub
     	super.init();
-    	service = new CommentAddService();
+    	service = new CommentService();
     }
 
 	/**

@@ -1,12 +1,13 @@
 package sample2.service.comment;
 
 import java.sql.Connection;
+import java.util.List;
 
 import sample2.bean.Comment;
 import sample2.dao.CommentDao;
 import sample2.util.DBConnection;
 
-public class CommentAddService {
+public class CommentService {
 	
 	private static CommentDao dao;
 	
@@ -19,6 +20,14 @@ public class CommentAddService {
 		
 		dao.insert(commentBean, con);
 		
+	}
+
+	public List<Comment> list(int boardId) {
+		Connection con = DBConnection.getConnection();
+		
+		List<Comment> list = dao.list(boardId, con);
+		
+		return list;
 	}
 
 	
