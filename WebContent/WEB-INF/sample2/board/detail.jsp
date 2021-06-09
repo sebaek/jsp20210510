@@ -81,10 +81,36 @@
 </c:if>
 <div class="container mt-5">
 	<c:forEach items="${comments }" var="comment">
+		<script>
+			$(document).ready(function() {
+				var $form = $('#' + 'comment${comment.id }Form');
+				var $modifyButton = $('#' + 'comment${comment.id }Button1');
+				var $deleteButton = $('#' + 'comment${comment.id }Button2');
+				var $submitButton = $('#' + 'comment${comment.id }Button3');
+				
+				$modifyButton.click(function(e) {
+					e.preventDefault();
+					$form.find("textarea").removeAttr("readonly");
+					$(this).attr("hidden", "hidden");
+					$submitButton.removeAttr("hidden");
+				});
+			});
+		</script>
 		<div>
-			<textarea>${comment.comment }</textarea>
-			<span>${comment.memberName }</span>
-			<span>${comment.timeAgo }</span>
+			<form id="comment${comment.id }Form" 
+			      action="${pageContext.request.contextPath }/sample2/comment/modify"
+			      method="post">
+			    <input name="commentId" value="${comment.id }" hidden />
+				<textarea name="comment" readonly>${comment.comment }</textarea>
+				<span>${comment.memberName }</span>
+				<span>${comment.timeAgo }</span>
+				
+				<c:if test="${sessionScope.userLogined.id == comment.memberId }">
+					<button id="comment${comment.id }Button1">수정</button>
+					<button id="comment${comment.id }Button3" hidden>전송</button>
+					<button id="comment${comment.id }Button2">삭제</button>
+				</c:if>
+			</form>
 		</div>
 	</c:forEach>
 </div>
