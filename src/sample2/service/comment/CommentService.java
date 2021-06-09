@@ -20,6 +20,7 @@ public class CommentService {
 		
 		dao.insert(commentBean, con);
 		
+		DBConnection.close(con);
 	}
 
 	public List<Comment> list(int boardId) {
@@ -27,6 +28,7 @@ public class CommentService {
 		
 		List<Comment> list = dao.list(boardId, con);
 		
+		DBConnection.close(con);
 		return list;
 	}
 
@@ -35,6 +37,15 @@ public class CommentService {
 		
 		dao.modify(comment, con);
 		
+		DBConnection.close(con);
+	}
+
+	public void remove(int id) {
+		Connection con = DBConnection.getConnection();
+		
+		dao.remove(id, con);
+		
+		DBConnection.close(con);
 	}
 
 	

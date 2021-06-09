@@ -92,6 +92,23 @@ public class CommentDao {
 		
 		
 	}
+
+	public void remove(int id, Connection con) {
+		String sql = "DELETE FROM Comment WHERE id = ?";
+		
+		try (
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			
+			pstmt.setInt(1, id);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
 	
 }
 
