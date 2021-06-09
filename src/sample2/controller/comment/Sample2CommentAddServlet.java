@@ -63,7 +63,7 @@ public class Sample2CommentAddServlet extends HttpServlet {
 		service.add(commentBean);
 		
 		// view에 전송(forward) 또는 redirect
-		String path = "/sample2/board/detail?id=" + boardId;
+		String path = request.getContextPath() + "/sample2/board/detail?id=" + boardId;
 		response.sendRedirect(path);
 	}
 
