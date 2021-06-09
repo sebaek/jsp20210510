@@ -94,6 +94,15 @@
 					$(this).attr("hidden", "hidden");
 					$submitButton.removeAttr("hidden");
 				});
+				
+				$deleteButton.click(function(e) {
+					e.preventDefault();
+					
+					if (confirm("삭제 하시겠습니까?")) {
+						$form.attr("action", "${pageContext.request.contextPath }/sample2/comment/remove");
+						$form.submit();
+					}
+				});
 			});
 		</script>
 		<div>
