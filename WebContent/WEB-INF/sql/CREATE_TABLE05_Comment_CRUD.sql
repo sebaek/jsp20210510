@@ -14,3 +14,4 @@ CREATE TABLE Comment
 );
 
 SELECT * FROM Comment;
+SELECT * FROM Member;
