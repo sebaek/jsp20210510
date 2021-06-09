@@ -64,6 +64,20 @@
 	
 	<s2:message />
 </div>
+
+<c:if test="${not empty sessionScope.userLogined }">
+<div class="container mt-5">
+	<form action="${pageContext.request.contextPath }/comment/add" method="post">
+		<textarea name="comment"></textarea>
+		<br>
+		<input name="memberId" value="${sessionScope.userLogined.id }" readonly>
+		<br>
+		<input name="boardId" value="${board.boardId }" readonly>
+		<br>
+		<input type="submit" value="댓글작성">
+	</form>
+</div>
+</c:if>
 </body>
 </html>
 
