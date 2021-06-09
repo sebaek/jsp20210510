@@ -78,6 +78,7 @@
 	</form>
 </div>
 
+</c:if>
 <div class="container mt-5">
 	<c:forEach items="${comments }" var="comment">
 		<div>
@@ -87,7 +88,6 @@
 		</div>
 	</c:forEach>
 </div>
-</c:if>
 </body>
 </html>
 
