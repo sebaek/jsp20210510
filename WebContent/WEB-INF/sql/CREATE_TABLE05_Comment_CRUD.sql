@@ -12,3 +12,5 @@ CREATE TABLE Comment
     FOREIGN KEY (memberId) REFERENCES Member(id),
     FOREIGN KEY (boardId) REFERENCES Board(id)
 );
+
+SELECT * FROM Comment;
