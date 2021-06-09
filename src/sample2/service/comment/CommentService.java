@@ -30,8 +30,22 @@ public class CommentService {
 		return list;
 	}
 
+	public void modify(Comment comment) {
+		Connection con = DBConnection.getConnection();
+		
+		dao.modify(comment, con);
+		
+	}
+
 	
 }
+
+
+
+
+
+
+
 
 
 

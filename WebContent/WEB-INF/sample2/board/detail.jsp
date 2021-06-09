@@ -101,6 +101,7 @@
 			      action="${pageContext.request.contextPath }/sample2/comment/modify"
 			      method="post">
 			    <input name="commentId" value="${comment.id }" hidden />
+			    <input name="boardId" value="${board.boardId }" hidden />
 				<textarea name="comment" readonly>${comment.comment }</textarea>
 				<span>${comment.memberName }</span>
 				<span>${comment.timeAgo }</span>
