@@ -67,12 +67,12 @@
 
 <c:if test="${not empty sessionScope.userLogined }">
 <div class="container mt-5">
-	<form action="${pageContext.request.contextPath }/comment/add" method="post">
+	<form action="${pageContext.request.contextPath }/sample2/comment/add" method="post">
 		<textarea name="comment"></textarea>
 		<br>
-		<input name="memberId" value="${sessionScope.userLogined.id }" readonly>
+		<input hidden name="memberId" value="${sessionScope.userLogined.id }" readonly>
 		<br>
-		<input name="boardId" value="${board.boardId }" readonly>
+		<input hidden name="boardId" value="${board.boardId }" readonly>
 		<br>
 		<input type="submit" value="댓글작성">
 	</form>
