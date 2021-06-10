@@ -240,9 +240,16 @@ public class MemberDao {
 	}
 
 	public Member getMember2(String id) {
-		String sql = "SELECT id, password, name, birth, inserted "
-				+ "FROM Member "
-				+ "WHERE id = ?";
+		String sql = "SELECT m.id,"
+				+ "          m.password,"
+				+ "          m.name,"
+				+ "          m.birth,"
+				+ "          m.inserted,"
+				+ "          count(b.id) numberOfBoard,"
+				+ "          count(c.id) numberOfComment "
+				+ "FROM Member m LEFT JOIN Board b ON m.id = b.memberId "
+				+ "     LEFT JOIN Comment c ON m.id = c.memberId "
+				+ "WHERE m.id = ?";
 		
 		ResultSet rs = null;
 		try (
@@ -260,6 +267,8 @@ public class MemberDao {
 				member.setName(rs.getString(3));
 				member.setBirth(rs.getDate(4));
 				member.setInserted(rs.getTimestamp(5));
+				member.setNumberOfBoard(rs.getInt(6));
+				member.setNumberOfComment(rs.getInt(7));
 				
 				return member;
 			}
