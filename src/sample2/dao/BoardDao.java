@@ -11,6 +11,7 @@ import java.util.List;
 
 import sample2.bean.Board;
 import sample2.bean.BoardDto;
+import sample2.util.DBConnection;
 
 public class BoardDao {
 	
@@ -313,6 +314,29 @@ public class BoardDao {
 		
 		
 		return list;
+	}
+
+	public int getNumberOfBoard(String id, Connection con) {
+		String sql = "SELECT COUNT(*) FROM Board WHERE memberId = ? ";
+		
+		ResultSet rs = null;
+		try (
+			PreparedStatement pstmt = con.prepareStatement(sql);
+				) {
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBConnection.close(rs);
+		}
+		
+		return 0;
 	}
 }
 
