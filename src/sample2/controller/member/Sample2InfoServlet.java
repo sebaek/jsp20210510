@@ -36,7 +36,8 @@ public class Sample2InfoServlet extends HttpServlet {
 		
 		if (member != null) {
 			MemberDao dao = new MemberDao();
-			Member mem = dao.getMember(member.getId());
+//			Member mem = dao.getMember(member.getId());
+			Member mem = dao.getMember2(member.getId());
 			
 			request.setAttribute("member", mem);
 			
