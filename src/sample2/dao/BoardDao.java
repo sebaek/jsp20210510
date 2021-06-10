@@ -301,6 +301,7 @@ public class BoardDao {
 				board.setBoardId(rs.getInt(1));
 				board.setTitle(rs.getString(2));
 				board.setMemberName(rs.getString(3));
+				board.setNumberOfComment(rs.getInt(4));
 				board.setInserted(rs.getTimestamp(5));
 				
 				list.add(board);
