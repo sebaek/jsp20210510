@@ -15,7 +15,7 @@
 <body>
 <s2:navbar></s2:navbar>
 <div class="container">
-	<h1>글 목록</h1>
+	<h1>글 목록 <small class="text-muted">[${totalNum }]</small></h1>
 	<s2:message></s2:message>
 	<table class="table">
 		<thead>
