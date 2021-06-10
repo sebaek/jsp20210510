@@ -273,6 +273,46 @@ public class BoardDao {
 		}
 		
 	}
+
+	public List<BoardDto> list3() {
+		List<BoardDto> list = new ArrayList<>();
+		
+		String sql = "SELECT b.id boardId, "
+				+ "          b.title title,"
+				+ "          m.name name,"
+				+ "          count(c.id) numberOfComment, "
+				+ "          b.inserted "
+				+ " FROM Board b "
+				+ " JOIN Member m "
+				+ " ON b.memberId = m.id "
+				+ " LEFT JOIN Comment c "
+				+ " ON b.id = c.boardId "
+				+ " GROUP BY b.id "
+				+ " ORDER BY boardId DESC ";
+		
+		try (
+			Connection con = DriverManager.getConnection(url, user, password);
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+				) {
+			
+			while (rs.next()) {
+				BoardDto board = new BoardDto();
+				board.setBoardId(rs.getInt(1));
+				board.setTitle(rs.getString(2));
+				board.setMemberName(rs.getString(3));
+				board.setInserted(rs.getTimestamp(5));
+				
+				list.add(board);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return list;
+	}
 }
 
 

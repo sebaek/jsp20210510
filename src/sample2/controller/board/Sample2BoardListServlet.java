@@ -33,7 +33,8 @@ public class Sample2BoardListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BoardDao dao = new BoardDao();
 //		List<Board> boardList = dao.list();
-		List<BoardDto> boardList = dao.list2();
+//		List<BoardDto> boardList = dao.list2();
+		List<BoardDto> boardList = dao.list3();
 		
 		request.setAttribute("boards", boardList);
 		
