@@ -245,8 +245,8 @@ public class MemberDao {
 				+ "          m.name,"
 				+ "          m.birth,"
 				+ "          m.inserted,"
-				+ "          count(b.id) numberOfBoard,"
-				+ "          count(c.id) numberOfComment "
+				+ "          count(DISTINCT b.id) numberOfBoard,"
+				+ "          count(DISTINCT c.id) numberOfComment "
 				+ "FROM Member m LEFT JOIN Board b ON m.id = b.memberId "
 				+ "     LEFT JOIN Comment c ON m.id = c.memberId "
 				+ "WHERE m.id = ?";
