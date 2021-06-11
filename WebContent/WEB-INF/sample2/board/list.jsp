@@ -36,7 +36,12 @@
 							${board.title }
 						</a>
 						<c:if test="${board.numberOfComment != 0 }">
-							<span><i class="fas fa-comment"></i>${board.numberOfComment }</span>
+							
+							<span class="fa-layers fa-fw">
+						    <i class="fas fa-comment"></i>
+						    <span class="fa-layers-text fa-inverse" data-fa-transform="shrink-5">${board.numberOfComment }</span>
+						  </span>
+
 						</c:if>
 					</td>
 					<td>${board.memberName }</td>
