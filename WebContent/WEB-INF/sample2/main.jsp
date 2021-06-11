@@ -17,6 +17,8 @@
 <body>
 <s2:navbar />
 
+<s2:message></s2:message>
+
 <div class="container">
 	<div class="jumbotron">
 	  <h1 class="display-4"><i class="fab fa-java"></i>환영합니다.</h1>

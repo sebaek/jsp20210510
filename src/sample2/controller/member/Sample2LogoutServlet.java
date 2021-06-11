@@ -31,6 +31,10 @@ public class Sample2LogoutServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.invalidate();
 	
+		session = request.getSession();
+		
+		session.setAttribute("message", "로그아웃되었습니다.");
+		
 		String path = request.getContextPath() + "/sample2/main";
 		response.sendRedirect(path);
 	}
