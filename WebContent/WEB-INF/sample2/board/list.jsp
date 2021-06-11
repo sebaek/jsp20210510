@@ -36,7 +36,7 @@
 							${board.title }
 						</a>
 						<c:if test="${board.numberOfComment != 0 }">
-							<span>[${board.numberOfComment }]</span>
+							<span><i class="fas fa-comment"></i>${board.numberOfComment }</span>
 						</c:if>
 					</td>
 					<td>${board.memberName }</td>
