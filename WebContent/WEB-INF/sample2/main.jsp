@@ -16,6 +16,7 @@
 </head>
 <body>
 <s2:navbar />
+
 <div class="container">
 	<div class="jumbotron">
 	  <h1 class="display-4">환영합니다.</h1>
