@@ -17,11 +17,15 @@
 <body>
 <s2:navbar />
 <div class="container">
-	
-	
-	<h1>환영합니다.</h1>
-	<a href="<%= request.getContextPath() %>/sample2/member/signup">회원가입</a>
+	<div class="jumbotron">
+	  <h1 class="display-4">환영합니다.</h1>
+	  <p class="lead">기본 Servlet/JSP로 만든 회원, 게시판 어플리케이션입니다.</p>
+	  <hr class="my-4">
+	  <p>프로그래밍을 처음 배워서 만들어 본 게시판 입니다. 회원가입부터 시작해보세요.</p>
+	  <a class="btn btn-primary btn-lg" href="<%= request.getContextPath() %>/sample2/member/signup" role="button">회원 가입</a>
+	</div>
 </div>
+
 </body>
 </html>
 
