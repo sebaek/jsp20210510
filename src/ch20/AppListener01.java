@@ -1,5 +1,7 @@
 package ch20;
 
+import java.util.TimeZone;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -11,41 +13,36 @@ import javax.servlet.ServletContextListener;
 //@WebListener
 public class AppListener01 implements ServletContextListener {
 
-    /**
-     * Default constructor. 
-     */
-    public AppListener01() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor.
+	 */
+	public AppListener01() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-     * @see ServletContextListener#contextDestroyed(ServletContextEvent)
-     */
-    public void contextDestroyed(ServletContextEvent sce)  { 
-         // TODO Auto-generated method stub
-    }
+	 * @see ServletContextListener#contextDestroyed(ServletContextEvent)
+	 */
+	public void contextDestroyed(ServletContextEvent sce) {
+		// TODO Auto-generated method stub
+	}
 
 	/**
-     * @see ServletContextListener#contextInitialized(ServletContextEvent)
-     */
-    public void contextInitialized(ServletContextEvent sce)  { 
-         System.out.println("어플리케이션 초기화 되었습니다.");
-         ServletContext application = sce.getServletContext();
-         String driver = application.getInitParameter("jdbcdriver");
-         String url = application.getInitParameter("jdbcUrl");
-         
-         System.out.println(driver);
-         System.out.println(url);
-         
-         System.out.println("초기화 메소드 종료");
-    }
-	
+	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
+	 */
+	public void contextInitialized(ServletContextEvent sce) {
+		System.out.println("어플리케이션 초기화 되었습니다.");
+		ServletContext application = sce.getServletContext();
+		String driver = application.getInitParameter("jdbcdriver");
+		String url = application.getInitParameter("jdbcUrl");
+
+		System.out.println(driver);
+		System.out.println(url);
+
+		System.out.println("초기화 메소드 종료");
+
+		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
+		System.out.println(TimeZone.getDefault());
+	}
+
 }
-
-
-
-
-
-
-
-
