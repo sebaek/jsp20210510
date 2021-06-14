@@ -40,9 +40,6 @@ public class AppListener01 implements ServletContextListener {
 		System.out.println(url);
 
 		System.out.println("초기화 메소드 종료");
-
-		TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"));
-		System.out.println(TimeZone.getDefault());
 	}
 
 }
